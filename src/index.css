@@ -1,0 +1,77 @@
+:root {
+  --brand-dark: #0d0221;
+  --brand-surface: #1a0b2e;
+  --brand-cyan: #00f2fe;
+  --brand-pink: #ff0844;
+  --brand-purple: #b224ef;
+  --brand-white: #ffffff;
+  --brand-light: #e0e0e0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 p-0 font-sans text-brand-light min-h-screen;
+    background: radial-gradient(circle at center, #1a0b2e 0%, #0d0221 100%);
+    background-attachment: fixed;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+/* Neon utilities */
+.text-neon-cyan {
+  color: var(--brand-cyan);
+  text-shadow: 0 0 5px rgba(0, 242, 254, 0.5), 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+.text-neon-pink {
+  color: var(--brand-pink);
+  text-shadow: 0 0 5px rgba(255, 8, 68, 0.5), 0 0 10px rgba(255, 8, 68, 0.3);
+}
+
+.shadow-neon-cyan {
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3), inset 0 0 10px rgba(0, 242, 254, 0.1);
+}
+
+.shadow-neon-pink {
+  box-shadow: 0 0 10px rgba(255, 8, 68, 0.3), inset 0 0 10px rgba(255, 8, 68, 0.1);
+}
+
+/* Glassmorphism utility */
+.bg-glass {
+  background: rgba(26, 11, 46, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Bingo specific styles */
+.bingo-cell-hover:hover {
+  border-color: var(--brand-cyan);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.6), inset 0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+.bingo-cell-selected {
+  background: rgba(0, 242, 254, 0.15) !important;
+  border-color: var(--brand-cyan) !important;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.6), inset 0 0 10px rgba(0, 242, 254, 0.2) !important;
+  color: #fff !important;
+  text-shadow: 0 0 5px rgba(0, 242, 254, 0.8) !important;
+}
+
+/* Animations */
+@keyframes confeti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.animate-confeti {
+  animation: confeti-fall linear infinite;
+}

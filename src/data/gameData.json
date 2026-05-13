@@ -1,0 +1,536 @@
+{
+  "CHART_ITEMS": {
+    "basico": [
+      "un tema romantico",
+      "un tema de desamor",
+      "un tema triste",
+      "un tema alegre",
+      "un tema para bailar"
+    ],
+    "pop": [
+      "un tema de tan bionica",
+      "un tema de avril lavigne",
+      "un tema de shakira",
+      "un tema de ariana grande",
+      "un tema de katy perry",
+      "un tema de dua lipa",
+      "un tema de bruno mars",
+      "un tema de the weeknd",
+      "un tema de coldplay",
+      "un tema de the beatles"
+    ],
+    "jazz": [
+      "un tema de frank sinatra"
+    ],
+    "rock": [
+      "un tema de queen"
+    ],
+    "música clásica": [
+      "un tema de beethoven"
+    ],
+    "folklore": [
+      "un tema de cuchi leguizamon"
+    ],
+    "hip hop": [
+      "un tema de eminem"
+    ],
+    "reggaeton": [
+      "un tema de bad bunny"
+    ]
+  },
+  "THEMES": {
+    "basico": [
+      {
+        "label": "Can't Help Falling in Love - Elvis Presley",
+        "spotifyId": "44AyOl4qwyRqmDxYupra5q"
+      },
+      {
+        "label": "My Heart Will Go On - Celine Dion",
+        "spotifyId": "3gcC4pNApBSMFXBOmFVKNb"
+      },
+      {
+        "label": "Someone Like You - Adele",
+        "spotifyId": "1zwMYTA5nlNjZxYrvBB2pV"
+      },
+      {
+        "label": "Stay With Me - Sam Smith",
+        "spotifyId": "5ob4UfpQPjJjEjLUE0pXvj"
+      },
+      {
+        "label": "All of Me - John Legend",
+        "spotifyId": "3bidbhpOYeV9R9GrnJTfJ1"
+      },
+      {
+        "label": "Nothing Compares 2 U - Sinéad O'Connor",
+        "spotifyId": "3DmFBFpU97g7bnAa1Yc60d"
+      },
+      {
+        "label": "The Sound of Silence - Simon & Garfunkel",
+        "spotifyId": "3YfS47QufnLDFA71FUsgCq"
+      },
+      {
+        "label": "Yesterday - The Beatles",
+        "spotifyId": "3BQHpFgAp4l80e1XslIjNI"
+      }
+    ],
+    "pop": [
+      {
+        "label": "Chica Bionica - Tan Biónica",
+        "spotifyId": "2hpLHrMCjABuFFQxoH7Fxl"
+      },
+      {
+        "label": "Shake It Off - Taylor Swift",
+        "spotifyId": "0cqRj7pUJDkTCEsJkx8snD"
+      },
+      {
+        "label": "Rolling in the Deep - Adele",
+        "spotifyId": "4y4fIa0EBiEBiMKCTbzDDU"
+      },
+      {
+        "label": "Shape of You - Ed Sheeran",
+        "spotifyId": "7qiZfU4dY1lWllzX7mPBI3"
+      },
+      {
+        "label": "Blinding Lights - The Weeknd",
+        "spotifyId": "0VjIjW4GlUZAMYd2vXMi3b"
+      },
+      {
+        "label": "Levitating - Dua Lipa",
+        "spotifyId": "463CkQjx2Zk1yXoBuierM9"
+      },
+      {
+        "label": "7 rings - Ariana Grande",
+        "spotifyId": "6ocbgoVGwYJhOv1GgI9NsF"
+      },
+      {
+        "label": "Roar - Katy Perry",
+        "spotifyId": "4jbmgIyjGoXjY01XxatOx6"
+      },
+      {
+        "label": "Uptown Funk - Bruno Mars",
+        "spotifyId": "32OlwWuMpZ6b0aN2RZOeMS"
+      },
+      {
+        "label": "bad guy - Billie Eilish",
+        "spotifyId": "2Fxmhks0bxGSBdJ92vM42m"
+      },
+      {
+        "label": "Circles - Post Malone",
+        "spotifyId": "21jGcNKet2qwijlDFuPiPb"
+      },
+      {
+        "label": "Stitches - Shawn Mendes",
+        "spotifyId": "0ewVA1Y2wUBIK4mKYMpJxV"
+      }
+    ],
+    "rock": [
+      {
+        "label": "Bohemian Rhapsody - Queen",
+        "spotifyId": "7tFiyTwD0nx5a1eklYtX2J"
+      },
+      {
+        "label": "Thunderstruck - AC/DC",
+        "spotifyId": "57bgtoPSgt236HzfBOd8kj"
+      },
+      {
+        "label": "November Rain - Guns N' Roses",
+        "spotifyId": "0skYUMpSADPBMGosKMcpHj"
+      },
+      {
+        "label": "Smells Like Teen Spirit - Nirvana",
+        "spotifyId": "5ghIJDpPoe3CfHMGu71E6T"
+      },
+      {
+        "label": "Let It Be - The Beatles",
+        "spotifyId": "7iN1s7xHE4ifF5povM6A48"
+      },
+      {
+        "label": "Stairway to Heaven - Led Zeppelin",
+        "spotifyId": "5CQ30WqJwcep0pYcV4AMNc"
+      },
+      {
+        "label": "Comfortably Numb - Pink Floyd",
+        "spotifyId": "7F02x6EKYIQV3VcTaTavLE"
+      },
+      {
+        "label": "Paint It Black - The Rolling Stones",
+        "spotifyId": "6vmRRBFMYRz5Nc38Q7uFkT"
+      },
+      {
+        "label": "Nothing Else Matters - Metallica",
+        "spotifyId": "0yc6Gst2xkRu0iXyfm8rll"
+      },
+      {
+        "label": "Everlong - Foo Fighters",
+        "spotifyId": "3skn2lauGk7Dx6bVIt5DVj"
+      },
+      {
+        "label": "Under the Bridge - RHCP",
+        "spotifyId": "3d9DCcoWTwhAB9w5bUD0QY"
+      },
+      {
+        "label": "Black - Pearl Jam",
+        "spotifyId": "0u2P5u6lvoDfwTYjAADbn4"
+      }
+    ],
+    "jazz": [
+      {
+        "label": "My Way - Frank Sinatra",
+        "spotifyId": "5Qbdcq1qJWg1aaFEP3fU98"
+      },
+      {
+        "label": "So What - Miles Davis",
+        "spotifyId": "7hm4HTk9encxT0LYDqtZBM"
+      },
+      {
+        "label": "A Love Supreme - John Coltrane",
+        "spotifyId": "2mzIWXXYZEuKstCvfVZNH2"
+      },
+      {
+        "label": "What a Wonderful World - Louis Armstrong",
+        "spotifyId": "29U7stRjqHU6rMiS8BfaI9"
+      },
+      {
+        "label": "Summertime - Ella Fitzgerald",
+        "spotifyId": "1BXedGc0kC4LPnVDMmFXue"
+      },
+      {
+        "label": "Feeling Good - Nina Simone",
+        "spotifyId": "1mNXBLQFRaUf5evSWHjtXs"
+      },
+      {
+        "label": "Almost Blue - Chet Baker",
+        "spotifyId": "5IEfHHTPIfDVXvSGLnFpUf"
+      },
+      {
+        "label": "Take Five - Dave Brubeck",
+        "spotifyId": "1YQWosTIljIvxAgHWTp7KP"
+      },
+      {
+        "label": "Waltz for Debby - Bill Evans",
+        "spotifyId": "2nGFzvICaeEWjIrBrL2RAx"
+      },
+      {
+        "label": "Round Midnight - Thelonious Monk",
+        "spotifyId": "3gZb8ggeW45RUHCBBRkHQE"
+      }
+    ],
+    "música clásica": [
+      {
+        "label": "Para Elisa - Beethoven",
+        "spotifyId": "70TI9J2rsGIuXyFqVzOswh"
+      },
+      {
+        "label": "Sinfonía 40 - Mozart",
+        "spotifyId": "5HKgJ5RMFHM0vYV6QWLVmq"
+      },
+      {
+        "label": "Tocata y Fuga - Bach",
+        "spotifyId": "3MqNOGHHQiM5cF6tPhcBMK"
+      },
+      {
+        "label": "Nocturno Op.9 - Chopin",
+        "spotifyId": "0fWFuJtdLOxSo5V1f3oXz3"
+      },
+      {
+        "label": "Las Cuatro Estaciones - Vivaldi",
+        "spotifyId": "6UcNKPbJObDRuSBSTLpB5L"
+      },
+      {
+        "label": "Claro de Luna - Debussy",
+        "spotifyId": "7JVNZfZ7rEVRGPqBFbzDHb"
+      },
+      {
+        "label": "El Lago de los Cisnes - Tchaikovsky",
+        "spotifyId": "3PUxrVQi6MiFYJTsKbHkVu"
+      },
+      {
+        "label": "Sinfonía Inconclusa - Schubert",
+        "spotifyId": "2BHBVqTiNHHMgYNXr29zfF"
+      }
+    ],
+    "folklore": [
+      {
+        "label": "Zamba para Olvidar - Cuchi Leguizamón",
+        "spotifyId": "6c2y2BKBXgkKlBzBJsF4N2"
+      },
+      {
+        "label": "Luna Tucumana - Atahualpa Yupanqui",
+        "spotifyId": "3t9n0aTzUuQAJ2E9KXCbOy"
+      },
+      {
+        "label": "Todo Cambia - Mercedes Sosa",
+        "spotifyId": "7JdRUeFHEPEkrDkCaLdRF7"
+      },
+      {
+        "label": "Kilómetro 11 - Los Chalchaleros",
+        "spotifyId": "2tEMqMuYBKjcm7YXwDJlAZ"
+      },
+      {
+        "label": "No Soy de Aquí - Facundo Cabral",
+        "spotifyId": "4c8XPBQ1ynLNVk1FdSUGj6"
+      },
+      {
+        "label": "Recuerdo - Horacio Guaraní",
+        "spotifyId": "0h7GNRqDInj3OmqXfPkGz7"
+      },
+      {
+        "label": "El Cóndor Pasa - Los Fronterizos",
+        "spotifyId": "5Fh2bFiHXgONJcfP8LfyXa"
+      },
+      {
+        "label": "Misa Criolla - Ariel Ramírez",
+        "spotifyId": "5jZCH4fELJJhJqBnDVWXQB"
+      }
+    ],
+    "hip hop": [
+      {
+        "label": "Lose Yourself - Eminem",
+        "spotifyId": "7MJQ9Nfxzh8LPZ9e9u68Fj"
+      },
+      {
+        "label": "HUMBLE. - Kendrick Lamar",
+        "spotifyId": "5K4W6rqBFWDnAN6FQUkS6x"
+      },
+      {
+        "label": "99 Problems - Jay-Z",
+        "spotifyId": "6nKGj4WU7BmcNMYYEkfFwJ"
+      },
+      {
+        "label": "N.Y. State of Mind - Nas",
+        "spotifyId": "6tIpBj0HHNDmEpGm4lc7EE"
+      },
+      {
+        "label": "Drop It Like It's Hot - Snoop Dogg",
+        "spotifyId": "5tFMHFNf4JZinxRnAbOUNE"
+      },
+      {
+        "label": "God's Plan - Drake",
+        "spotifyId": "6DCZcSspjsKoFjzjrWbKbs"
+      },
+      {
+        "label": "POWER - Kanye West",
+        "spotifyId": "2gZUPNdnz5Y45yvgmVBeYm"
+      },
+      {
+        "label": "No Role Modelz - J. Cole",
+        "spotifyId": "58ge6dfP91o9oXMzq3XkIS"
+      },
+      {
+        "label": "Hypnotize - Biggie Smalls",
+        "spotifyId": "0uYB8UKq9X5jITiXv5RRcR"
+      },
+      {
+        "label": "California Love - Tupac",
+        "spotifyId": "5mz0i3YAHkLkLy4rBkJYAA"
+      }
+    ],
+    "reggaeton": [
+      {
+        "label": "Tití Me Preguntó - Bad Bunny",
+        "spotifyId": "5HCyWlXZPP0y6Gqq8TgA20"
+      },
+      {
+        "label": "Mi Gente - J Balvin",
+        "spotifyId": "5SI2KFsMgRRSoZJOqBsHE0"
+      },
+      {
+        "label": "Gasolina - Daddy Yankee",
+        "spotifyId": "21OLvKXCMkHEaFN5xFBImQ"
+      },
+      {
+        "label": "Taki Taki - Ozuna",
+        "spotifyId": "3bZ7xEDV7mQ3JqCFo7lCME"
+      },
+      {
+        "label": "Hawái - Maluma",
+        "spotifyId": "6n0oJqhyJUB4jLLw9hFHH6"
+      },
+      {
+        "label": "Todo de Ti - Rauw Alejandro",
+        "spotifyId": "07c1AzRWL5i4U8UJQVN4XL"
+      },
+      {
+        "label": "BICHOTA - Karol G",
+        "spotifyId": "4VqPOruhp5EdPBeR92t6lQ"
+      },
+      {
+        "label": "El Perdón - Nicky Jam",
+        "spotifyId": "6l8GvAyoUZwWDgF1e4822w"
+      },
+      {
+        "label": "Nota de Voz - Wisin & Yandel",
+        "spotifyId": "3kWr1HZiJNV6lHFJv6V4lC"
+      }
+    ]
+  },
+  "SUSTANTIVOS": [
+    "pollo",
+    "gato",
+    "perro",
+    "dragón",
+    "tigre",
+    "león",
+    "oso",
+    "lobo",
+    "halcón",
+    "águila",
+    "tiburón",
+    "dinosaurio",
+    "fénix",
+    "grifo",
+    "unicornio",
+    "rinoceronte",
+    "elefante",
+    "cocodrilo",
+    "camaleón",
+    "escorpión",
+    "robot",
+    "ninja",
+    "pirata",
+    "mago",
+    "caballero",
+    "samurai",
+    "vikingo",
+    "gladiador",
+    "explorador",
+    "astronauta",
+    "cyborg",
+    "fantasma",
+    "gigante",
+    "enano",
+    "elfo",
+    "trol",
+    "gólem",
+    "titán",
+    "héroe",
+    "villano",
+    "zombie",
+    "alien",
+    "mutante",
+    "andrógino",
+    "ciborg",
+    "volcán",
+    "tornado",
+    "eclipse",
+    "cometa",
+    "meteoro",
+    "oceáno",
+    "espejo",
+    "laberinto",
+    "abismo",
+    "orbe",
+    "cristal",
+    "amuletó",
+    "cetro",
+    "tridente",
+    "martillo",
+    "arco",
+    "escudo",
+    "enigma",
+    "misterio",
+    "destino",
+    "caos",
+    "orden",
+    "eco",
+    "ritmo",
+    "ciclo",
+    "vórtice",
+    "vortex",
+    "pulso",
+    "latido",
+    "susurro",
+    "grito",
+    "silencio"
+  ],
+  "ADJETIVOS": [
+    "veloz",
+    "feroz",
+    "gigante",
+    "minúsculo",
+    "inmenso",
+    "colosal",
+    "esbelto",
+    "robusto",
+    "ágil",
+    "fuerte",
+    "resistente",
+    "flexible",
+    "rígido",
+    "ligero",
+    "pesado",
+    "brillante",
+    "opaco",
+    "radiante",
+    "poderoso",
+    "temible",
+    "espacial",
+    "cósmico",
+    "volcánico",
+    "oceánico",
+    "forestal",
+    "desértico",
+    "montañoso",
+    "cristalino",
+    "metálico",
+    "rocoso",
+    "arbóreo",
+    "glacial",
+    "ígneo",
+    "acuático",
+    "aéreo",
+    "terrestre",
+    "estelar",
+    "lunar",
+    "solar",
+    "mágico",
+    "místico",
+    "eléctrico",
+    "invisible",
+    "etéreo",
+    "dimensional",
+    "temporal",
+    "psíquico",
+    "telepático",
+    "incandescente",
+    "fulgurante",
+    "resplandeciente",
+    "luminoso",
+    "oscuro",
+    "umbrio",
+    "fantasmal",
+    "espectral",
+    "legendario",
+    "épico",
+    "supremo",
+    "divino",
+    "celestial",
+    "infernal",
+    "ancestral",
+    "primordial",
+    "eterno",
+    "inmortal",
+    "invicto",
+    "imbatible",
+    "soberano",
+    "sublime",
+    "exaltado",
+    "glorioso",
+    "triunfante",
+    "dorado",
+    "plateado",
+    "de bronce",
+    "escarlata",
+    "de esmeralda",
+    "de zafiro",
+    "de marfil",
+    "turquesa",
+    "de amatista",
+    "de perlas",
+    "de coral",
+    "de jade",
+    "de cuarzo",
+    "de ónix",
+    "de topacio"
+  ]
+}
