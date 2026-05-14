@@ -14,7 +14,7 @@ const InputField = ({
   return (
     <div className={`space-y-2 ${containerClassName}`}>
       {label && (
-        <label className="text-sm font-bold text-brand-wood uppercase tracking-wider ml-1 block">
+        <label className="text-sm font-bold text-brand-light uppercase tracking-wider ml-1 block">
           {label}
         </label>
       )}
@@ -25,7 +25,7 @@ const InputField = ({
         placeholder={placeholder}
         autoFocus={autoFocus}
         onKeyDown={onKeyDown}
-        className={`w-full p-3 border-2 border-brand-wood/20 rounded-xl focus:border-brand-bronze focus:outline-none bg-white text-brand-wood placeholder-brand-wood/40 font-bold ${className}`}
+        className={`w-full p-3 border-2 border-brand-light/10 rounded-xl focus:border-brand-cyan focus:outline-none bg-glass text-brand-light placeholder-brand-wood/40 font-bold ${className}`}
       />
     </div>
   );

@@ -287,7 +287,7 @@ const ContributeThemeModal = ({ isOpen, onClose, onContribute }) => {
               onClick={handleContributeSelected}
               disabled={selectedThemes.length === 0}
               className={`w-full py-4 rounded-xl font-black tracking-widest uppercase text-sm transition-all shadow-neon-cyan ${selectedThemes.length > 0
-                ? 'bg-gradient-to-r from-brand-cyan to-brand-pink text-white hover:opacity-90 active:scale-95'
+                ? 'bg-gradient-to-r from-brand-cyan to-brand-pink text-black hover:opacity-90 active:scale-95'
                 : 'bg-white/5 text-white/30 border border-white/10'
                 }`}
             >

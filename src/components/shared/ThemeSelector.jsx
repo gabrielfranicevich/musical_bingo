@@ -17,15 +17,15 @@ const ThemeSelector = ({
   <div className="mb-6">
     <button
       onClick={() => setExpanded(!expanded)}
-      className="w-full flex items-center justify-between p-4 bg-white rounded-2xl hover:bg-brand-beige/20 transition-all border-2 border-brand-wood shadow-[4px_4px_0px_0px_rgba(93,64,55,1)] active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(93,64,55,1)]"
+      className="w-full flex items-center justify-between p-4 bg-glass rounded-2xl hover:bg-white/5 transition-all border-2 border-brand-cyan/30 shadow-neon-cyan active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(93,64,55,1)]"
     >
       <div className="flex items-center gap-3">
-        <div className="bg-brand-mustard p-2 rounded-lg text-white">
+        <div className="bg-brand-pink p-2 rounded-lg text-white">
           <Edit2 size={20} />
         </div>
         <div className="text-left">
-          <h2 className="text-lg font-bold text-brand-wood leading-tight">Temas</h2>
-          <span className="text-xs text-brand-wood/70 font-bold uppercase tracking-wide">{selectedThemes.length} seleccionados</span>
+          <h2 className="text-lg font-bold text-brand-light leading-tight">Temas</h2>
+          <span className="text-xs text-brand-light/70 font-bold uppercase tracking-wide">{selectedThemes.length} seleccionados</span>
         </div>
       </div>
       <div className="flex items-center gap-2">
@@ -35,17 +35,17 @@ const ThemeSelector = ({
               e.stopPropagation();
               onOpenCreateModal(e);
             }}
-            className="p-2 rounded-lg bg-brand-pastel-mint border-2 border-brand-wood text-brand-wood hover:brightness-95 transition-all shadow-[2px_2px_0px_0px_rgba(93,64,55,1)] active:translate-y-0.5 active:shadow-none cursor-pointer"
+            className="p-2 rounded-lg bg-brand-pastel-mint border-2 border-brand-cyan/30 text-brand-light hover:brightness-95 transition-all shadow-[2px_2px_0px_0px_rgba(93,64,55,1)] active:translate-y-0.5 active:shadow-none cursor-pointer"
             title={isHost ? "Crear lista personalizada" : "Contribuir temas"}
           >
             <Plus size={18} />
           </div>
         )}
-        {expanded ? <ChevronUp size={24} className="text-brand-wood" /> : <ChevronDown size={24} className="text-brand-wood" />}
+        {expanded ? <ChevronUp size={24} className="text-brand-light" /> : <ChevronDown size={24} className="text-brand-light" />}
       </div>
     </button>
     {expanded && (
-      <div className="mt-4 p-4 bg-brand-wood/5 rounded-2xl border-2 border-brand-wood/10 border-dashed">
+      <div className="mt-4 p-4 bg-brand-wood/5 rounded-2xl border-2 border-brand-cyan/30/10 border-dashed">
         <div className="grid grid-cols-2 gap-3">
           {/* Custom lists */}
           {Object.keys(customLists).map(listName => (
@@ -54,8 +54,8 @@ const ThemeSelector = ({
                 onClick={() => onToggleTheme(listName)}
                 disabled={!isHost}
                 className={`w-full p-3 rounded-xl font-bold capitalize transition-all border-2 ${selectedThemes.includes(listName)
-                  ? 'bg-brand-pastel-mint text-brand-wood border-brand-wood shadow-[2px_2px_0px_0px_rgba(93,64,55,1)]'
-                  : 'bg-white text-brand-wood border-brand-wood/20 hover:border-brand-wood/50'
+                  ? 'bg-brand-pastel-mint text-brand-light border-brand-cyan/30 shadow-[2px_2px_0px_0px_rgba(93,64,55,1)]'
+                  : 'bg-glass text-brand-light border-brand-light/10 hover:border-brand-cyan/30/50'
                   } ${!isHost ? 'cursor-not-allowed opacity-70' : ''}`}
               >
                 {listName}
@@ -67,7 +67,7 @@ const ThemeSelector = ({
                       e.stopPropagation();
                       onEditList(listName);
                     }}
-                    className="p-1 rounded bg-white/90 border border-brand-wood/20 text-brand-wood hover:bg-brand-beige transition-all"
+                    className="p-1 rounded bg-glass/90 border border-brand-light/10 text-brand-light hover:bg-white/10 transition-all"
                     title="Editar"
                   >
                     <Edit2 size={12} />
@@ -77,7 +77,7 @@ const ThemeSelector = ({
                       e.stopPropagation();
                       onDeleteList(listName);
                     }}
-                    className="p-1 rounded bg-white/90 border border-brand-wood/20 text-brand-wood hover:bg-red-100 transition-all"
+                    className="p-1 rounded bg-glass/90 border border-brand-light/10 text-brand-light hover:bg-red-100 transition-all"
                     title="Eliminar"
                   >
                     <X size={12} />
@@ -92,7 +92,7 @@ const ThemeSelector = ({
             <>
               <div className="col-span-2 mt-2 mb-1">
                 <div className="h-px bg-brand-wood/20"></div>
-                <p className="text-xs text-brand-wood/60 font-bold uppercase tracking-wide mt-2">Aportados por jugadores</p>
+                <p className="text-xs text-brand-light/60 font-bold uppercase tracking-wide mt-2">Aportados por jugadores</p>
               </div>
               {contributedThemes.map((theme, idx) => (
                 <div key={`${theme.name}-${theme.contributorId}-${idx}`} className="relative">
@@ -100,8 +100,8 @@ const ThemeSelector = ({
                     onClick={() => onToggleTheme(`contributed:${theme.name}:${theme.contributorId}`)}
                     disabled={!isHost}
                     className={`w-full p-3 rounded-xl font-bold capitalize transition-all border-2 ${selectedThemes.includes(`contributed:${theme.name}:${theme.contributorId}`)
-                      ? 'bg-brand-pastel-mint text-brand-wood border-brand-wood shadow-[2px_2px_0px_0px_rgba(93,64,55,1)]'
-                      : 'bg-white text-brand-wood border-brand-wood/20 hover:border-brand-wood/50'
+                      ? 'bg-brand-pastel-mint text-brand-light border-brand-cyan/30 shadow-[2px_2px_0px_0px_rgba(93,64,55,1)]'
+                      : 'bg-glass text-brand-light border-brand-light/10 hover:border-brand-cyan/30/50'
                       } ${!isHost ? 'cursor-not-allowed opacity-70' : ''}`}
                   >
                     <div className="text-left">
@@ -117,7 +117,7 @@ const ThemeSelector = ({
           {/* Built-in themes */}
           <div className="col-span-2 mt-2 mb-1">
             <div className="h-px bg-brand-wood/20"></div>
-            <p className="text-xs text-brand-wood/60 font-bold uppercase tracking-wide mt-2">Temas integrados</p>
+            <p className="text-xs text-brand-light/60 font-bold uppercase tracking-wide mt-2">Temas integrados</p>
           </div>
           {Object.keys(THEMES).map(theme => (
             <button
@@ -125,8 +125,8 @@ const ThemeSelector = ({
               onClick={() => onToggleTheme(theme)}
               disabled={!isHost}
               className={`p-3 rounded-xl font-bold capitalize transition-all border-2 ${selectedThemes.includes(theme)
-                ? 'bg-brand-bronze text-white border-brand-wood shadow-[2px_2px_0px_0px_rgba(93,64,55,1)]'
-                : 'bg-white text-brand-wood border-brand-wood/20 hover:border-brand-wood/50'
+                ? 'bg-brand-bronze text-white border-brand-cyan/30 shadow-[2px_2px_0px_0px_rgba(93,64,55,1)]'
+                : 'bg-glass text-brand-light border-brand-light/10 hover:border-brand-cyan/30/50'
                 } ${!isHost ? 'cursor-not-allowed opacity-70' : ''}`}
             >
               {theme}
@@ -134,7 +134,7 @@ const ThemeSelector = ({
           ))}
         </div>
         {!isHost && (
-          <div className="text-center text-xs text-brand-wood/60 font-bold mt-3 italic">
+          <div className="text-center text-xs text-brand-light/60 font-bold mt-3 italic">
             Solo el anfitrión puede seleccionar temas. Usa el botón + para contribuir tus temas.
           </div>
         )}

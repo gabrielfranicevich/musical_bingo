@@ -59,7 +59,7 @@
 }
 
 .bingo-cell-selected {
-  background: rgba(0, 242, 254, 0.15) !important;
+  background: rgba(13, 2, 33, 0.85) !important;
   border-color: var(--brand-cyan) !important;
   box-shadow: 0 0 15px rgba(0, 242, 254, 0.6), inset 0 0 10px rgba(0, 242, 254, 0.2) !important;
   color: #fff !important;

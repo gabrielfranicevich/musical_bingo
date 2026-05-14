@@ -26,7 +26,7 @@ const GameCodeInput = ({ onJoin }) => {
 
   return (
     <div className="mb-4">
-      <label className="text-sm font-bold text-brand-wood uppercase tracking-wider ml-1">Código de Juego</label>
+      <label className="text-sm font-bold text-brand-light uppercase tracking-wider ml-1">Código de Juego</label>
       <div className="flex gap-2 mt-2">
         <input
           type="text"
@@ -35,13 +35,13 @@ const GameCodeInput = ({ onJoin }) => {
           onPaste={handlePaste}
           placeholder="XXXX"
           maxLength={4}
-          className="flex-1 p-3 border-2 border-brand-wood/20 rounded-xl focus:border-brand-bronze focus:outline-none bg-white text-brand-wood font-bold text-lg text-center tracking-widest uppercase"
+          className="flex-1 p-3 border-2 border-brand-light/10 rounded-xl focus:border-brand-cyan focus:outline-none bg-glass text-brand-light font-bold text-lg text-center tracking-widest uppercase"
           onKeyDown={handleKeyDown}
         />
         <button
           onClick={handleJoin}
           disabled={code.length !== 4}
-          className="px-6 py-3 bg-brand-bronze text-white rounded-xl font-bold shadow-[2px_2px_0px_0px_#5D4037] hover:translate-y-[-1px] active:translate-y-0.5 transition-all border-2 border-brand-wood disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-6 py-3 bg-brand-bronze text-white rounded-xl font-bold shadow-[2px_2px_0px_0px_#5D4037] hover:translate-y-[-1px] active:translate-y-0.5 transition-all border-2 border-brand-cyan/30 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           UNIRSE
         </button>

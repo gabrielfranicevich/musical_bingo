@@ -123,7 +123,7 @@ const OnlineLobbyScreen = ({ setScreen, onlineGames = [], lanGames = [],
           <PrimaryButton
             onClick={() => setScreen('online_create')}
           >
-            <div className="bg-white/20 p-1 rounded-lg">
+            <div className="bg-black/40 p-1 rounded-lg">
               <Users size={24} />
             </div>
             CREAR PARTIDA

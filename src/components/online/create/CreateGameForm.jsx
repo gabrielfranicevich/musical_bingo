@@ -42,7 +42,7 @@ const CreateGameForm = ({
       {/* Players Count */}
       <div className="space-y-2">
         <div className="flex items-center justify-between ml-1">
-          <label className="text-sm font-bold text-brand-wood uppercase tracking-wider">
+          <label className="text-sm font-bold text-brand-light uppercase tracking-wider">
             Cantidad de Jugadores
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
@@ -57,7 +57,7 @@ const CreateGameForm = ({
               }
               className="w-4 h-4 accent-brand-bronze"
             />
-            <span className="text-xs font-bold text-brand-wood/70">
+            <span className="text-xs font-bold text-brand-light/70">
               Ilimitados
             </span>
           </label>
@@ -83,7 +83,7 @@ const CreateGameForm = ({
 
       {/* Game Type */}
       <div className="space-y-3">
-        <label className="text-sm font-bold text-brand-wood uppercase tracking-wider ml-1">
+        <label className="text-sm font-bold text-brand-light uppercase tracking-wider ml-1">
           Tipo de Juego
         </label>
 
@@ -94,12 +94,12 @@ const CreateGameForm = ({
             }
             className={`p-3 rounded-xl border-2 text-center transition-all ${newGameSettings.type === "chat"
               ? "bg-brand-wood text-white border-brand-dark shadow-[3px_3px_0px_0px_#2C1810]"
-              : "bg-white text-brand-wood border-brand-wood/20 hover:border-brand-wood/50"
+              : "bg-glass text-brand-light border-brand-light/10 hover:border-brand-cyan/30/50"
               }`}
           >
             <div className="flex flex-col items-center gap-2">
               <div className={`p-2 rounded-lg transition-colors ${newGameSettings.type === "chat"
-                ? "bg-white/20"
+                ? "bg-glass/20"
                 : "bg-brand-wood/10"
                 }`}>
                 <MessageSquare size={20} />
@@ -115,12 +115,12 @@ const CreateGameForm = ({
             }
             className={`p-3 rounded-xl border-2 text-center transition-all ${newGameSettings.type === "in_person"
               ? "bg-brand-wood text-white border-brand-dark shadow-[3px_3px_0px_0px_#2C1810]"
-              : "bg-white text-brand-wood border-brand-wood/20 hover:border-brand-wood/50"
+              : "bg-glass text-brand-light border-brand-light/10 hover:border-brand-cyan/30/50"
               }`}
           >
             <div className="flex flex-col items-center gap-2">
               <div className={`p-2 rounded-lg transition-colors ${newGameSettings.type === "in_person"
-                ? "bg-white/20"
+                ? "bg-glass/20"
                 : "bg-brand-wood/10"
                 }`}>
                 <Users size={20} />

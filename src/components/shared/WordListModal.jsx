@@ -68,8 +68,8 @@ const WordListModal = ({ isOpen, onClose, onSave, existingList = null }) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-brand-cream rounded-3xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto border-4 border-brand-wood shadow-[8px_8px_0px_0px_rgba(93,64,55,0.3)]">
-        <h2 className="text-2xl font-bold text-brand-wood mb-4">
+      <div className="bg-brand-cream rounded-3xl p-6 max-w-lg w-full max-h-[90vh] overflow-y-auto border-4 border-brand-cyan/30 shadow-[8px_8px_0px_0px_rgba(93,64,55,0.3)]">
+        <h2 className="text-2xl font-bold text-brand-light mb-4">
           {existingList ? 'Editar Lista' : 'Nueva Lista de Palabras'}
         </h2>
 
@@ -93,7 +93,7 @@ const WordListModal = ({ isOpen, onClose, onSave, existingList = null }) => {
 
         {/* Words Input */}
         <div className="mb-4">
-          <label className="text-sm font-bold text-brand-wood uppercase tracking-wider ml-1 block mb-2">
+          <label className="text-sm font-bold text-brand-light uppercase tracking-wider ml-1 block mb-2">
             Lista de Palabras
           </label>
           <textarea
@@ -101,16 +101,16 @@ const WordListModal = ({ isOpen, onClose, onSave, existingList = null }) => {
             onChange={(e) => setWordsInput(e.target.value)}
             placeholder="perro, gato, león, ..."
             rows={4}
-            className="w-full p-3 border-2 border-brand-wood/20 rounded-xl focus:border-brand-bronze focus:outline-none bg-white text-brand-wood placeholder-brand-wood/40 font-bold resize-none"
+            className="w-full p-3 border-2 border-brand-light/10 rounded-xl focus:border-brand-cyan focus:outline-none bg-glass text-brand-light placeholder-brand-wood/40 font-bold resize-none"
           />
-          <div className="text-xs text-brand-wood/60 mt-1 ml-1">
+          <div className="text-xs text-brand-light/60 mt-1 ml-1">
             Formato: palabra1, palabra2, palabra3
           </div>
         </div>
 
         {/* Add Single Word */}
         <div className="mb-4">
-          <label className="text-sm font-bold text-brand-wood uppercase tracking-wider ml-1 block mb-2">
+          <label className="text-sm font-bold text-brand-light uppercase tracking-wider ml-1 block mb-2">
             Agregar Palabra Individual
           </label>
           <div className="flex gap-2">
@@ -125,7 +125,7 @@ const WordListModal = ({ isOpen, onClose, onSave, existingList = null }) => {
             </div>
             <button
               onClick={handleAddWord}
-              className="px-4 py-3 bg-brand-pastel-mint border-2 border-brand-wood text-brand-wood font-bold rounded-xl hover:brightness-95 transition-all shadow-[2px_2px_0px_0px_rgba(93,64,55,1)] active:translate-y-0.5 active:shadow-none"
+              className="px-4 py-3 bg-brand-pastel-mint border-2 border-brand-cyan/30 text-brand-light font-bold rounded-xl hover:brightness-95 transition-all shadow-[2px_2px_0px_0px_rgba(93,64,55,1)] active:translate-y-0.5 active:shadow-none"
             >
               +
             </button>
@@ -136,13 +136,13 @@ const WordListModal = ({ isOpen, onClose, onSave, existingList = null }) => {
         <div className="flex gap-3">
           <button
             onClick={handleClose}
-            className="flex-1 py-3 bg-white border-2 border-brand-wood text-brand-wood font-bold rounded-xl hover:bg-brand-beige/20 transition-all"
+            className="flex-1 py-3 bg-glass border-2 border-brand-cyan/30 text-brand-light font-bold rounded-xl hover:bg-white/5 transition-all"
           >
             Cancelar
           </button>
           <button
             onClick={handleSave}
-            className="flex-1 py-3 bg-brand-bronze text-white font-bold rounded-xl hover:brightness-95 transition-all shadow-[4px_4px_0px_0px_rgba(93,64,55,1)] active:translate-y-0.5 active:shadow-[2px_2px_0px_0px_rgba(93,64,55,1)] border-2 border-brand-wood"
+            className="flex-1 py-3 bg-brand-bronze text-white font-bold rounded-xl hover:brightness-95 transition-all shadow-neon-cyan active:translate-y-0.5 active:shadow-[2px_2px_0px_0px_rgba(93,64,55,1)] border-2 border-brand-cyan/30"
           >
             Guardar
           </button>
