@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import BingoCard from '../game/BingoCard';
 import HostDJPanel from '../game/HostDJPanel';
+import BingoReviewScreen from '../game/BingoReviewScreen';
+import SoundEqualizer from '../game/SoundEqualizer';
+import SpotifyAutoPlay from '../game/SpotifyAutoPlay';
 
 const OnlinePlayingScreen = ({
   roomData,
@@ -10,6 +13,7 @@ const OnlinePlayingScreen = ({
   resetGame,
   markCell,
   nextSong,
+  resolveReview,
 }) => {
   const myPlayer = roomData.players.find(p => p.playerId === playerId) || {};
   const gameData = roomData.gameData || {};
@@ -17,8 +21,12 @@ const OnlinePlayingScreen = ({
   const myCard = gameData.cards?.[myPlayer.playerId] || null;
   const selectedGenres = roomData.settings?.selectedGenres || ['basico'];
   const currentSongIndex = gameData.currentSongIndex ?? -1;
+  const currentSpotifyId = gameData.currentSpotifyId || null;
+  const isRemote = roomData.settings?.type === 'remote';
 
-  const iWon = gameData.winner === myPlayer.playerId;
+  const gameStarted = currentSongIndex >= 0;
+  const isPlaying = gameState === 'playing' && gameStarted;
+  const isReviewing = gameState === 'reviewing';
   const finished = gameState === 'finished';
 
   // Enter → reset (host only, when finished)
@@ -31,75 +39,84 @@ const OnlinePlayingScreen = ({
   }, [finished, isHost, resetGame]);
 
   return (
-    <div className="p-4 relative z-10 h-full flex flex-col gap-3 overflow-y-auto">
+    <div className="relative z-10 h-full flex flex-col overflow-hidden">
 
-      {/* Top bar */}
-      <div className="flex items-center justify-between">
-        <div className="flex flex-col">
-          <span className="text-xs text-brand-wood/50 font-semibold uppercase tracking-wider">
-            🎵 Bingo Musical
-          </span>
-          <span className="text-xs text-brand-wood/40">{roomData.roomName}</span>
-        </div>
+      {/* Review overlay */}
+      {isReviewing && (
+        <BingoReviewScreen
+          review={gameData.review}
+          isHost={isHost}
+          resolveReview={resolveReview}
+        />
+      )}
+
+      {/* ── Top bar ─────────────────────────────────────────────── */}
+      <div className="flex items-center px-4 pt-4 pb-2 shrink-0">
         <button
           id="leave-room-btn"
           onClick={leaveRoom}
-          className="text-xs text-brand-wood/40 hover:text-red-500 font-bold transition-colors px-2 py-1 rounded-lg hover:bg-red-50"
+          className="flex items-center gap-1 text-brand-light/40 hover:text-brand-pink transition-colors font-bold text-sm px-2 py-1 rounded-lg hover:bg-brand-pink/10 active:scale-95"
         >
-          Salir
+          ← Salir
         </button>
       </div>
 
-      {/* Win banner */}
-      {finished && (
-        <div className={[
-          'w-full rounded-2xl py-3 px-4 text-center font-extrabold text-sm shadow-md',
-          iWon
-            ? 'bg-gradient-to-r from-brand-mustard to-amber-400 text-brand-dark animate-bounce'
-            : 'bg-white/60 border-2 border-brand-wood/10 text-brand-wood'
-        ].join(' ')}>
-          {iWon
-            ? `🎉 ¡BINGO! ¡Ganaste con "${gameData.winningPattern?.name}"!`
-            : `🏆 ${gameData.winnerName} hizo BINGO con "${gameData.winningPattern?.name}"`
-          }
-        </div>
-      )}
+      {/* ── Scrollable content ──────────────────────────────────── */}
+      <div className="flex-1 overflow-y-auto px-4 pb-4 flex flex-col gap-3">
 
-      {/* Host DJ panel */}
-      {isHost && (
-        <HostDJPanel
-          selectedGenres={selectedGenres}
-          currentSongIndex={currentSongIndex}
-          onNextSong={nextSong}
-        />
-      )}
+        {/* Host DJ panel (includes hidden Spotify iframe + equalizer) */}
+        {isHost && (
+          <HostDJPanel
+            selectedGenres={selectedGenres}
+            currentSongIndex={currentSongIndex}
+            onNextSong={nextSong}
+          />
+        )}
 
-      {/* Bingo card */}
-      {myCard && (
-        <BingoCard
-          card={myCard}
-          onMarkCell={markCell}
-          disabled={finished}
-          winnerName={finished ? gameData.winnerName : null}
-        />
-      )}
+        {/* Equalizer for non-host players while a song is playing */}
+        {!isHost && isPlaying && (
+          <div className="w-full flex flex-col items-center gap-3 bg-glass rounded-2xl border border-brand-light/10 py-6 px-4">
+            <SoundEqualizer active size="lg" />
+            <p className="text-xs text-brand-light/50 uppercase tracking-widest font-bold animate-pulse">
+              ♫ Escuchá la música y marca tu casilla
+            </p>
+          </div>
+        )}
 
-      {!myCard && (
-        <div className="flex-1 flex items-center justify-center text-brand-wood/40 text-sm">
-          Cargando cartón...
-        </div>
-      )}
+        {/* Non-host: waiting for DJ to start */}
+        {!isHost && !gameStarted && !finished && (
+          <div className="w-full flex flex-col items-center gap-3 bg-glass rounded-2xl border border-brand-light/10 py-6 px-4">
+            <SoundEqualizer active={false} size="lg" />
+            <span className="text-xs text-brand-light/60 font-semibold tracking-wide">
+              Esperando que el DJ empiece…
+            </span>
+          </div>
+        )}
 
-      {/* Reset button (host, finished) */}
-      {finished && isHost && (
-        <button
-          id="reset-game-btn"
-          onClick={resetGame}
-          className="w-full py-3 rounded-2xl bg-brand-wood text-brand-cream font-extrabold text-sm tracking-wide hover:bg-brand-wood/80 active:scale-95 transition-all mt-1"
-        >
-          🔄 Nueva partida
-        </button>
-      )}
+        {/* Spotify auto-play for Remote mode (non-host) */}
+        {!isHost && isRemote && (
+          <SpotifyAutoPlay spotifyId={currentSpotifyId} isRemote={isRemote} />
+        )}
+
+        {/* Bingo card — disabled before game starts or after win/review */}
+        {myCard && (
+          <BingoCard
+            card={myCard}
+            onMarkCell={markCell}
+            disabled={!gameStarted || finished || isReviewing}
+            winnerName={finished ? gameData.winnerName : null}
+            isHost={isHost}
+            onReset={resetGame}
+            onLeave={leaveRoom}
+          />
+        )}
+
+        {!myCard && (
+          <div className="flex-1 flex items-center justify-center text-brand-light/40 text-sm">
+            Cargando cartón…
+          </div>
+        )}
+      </div>
     </div>
   );
 };

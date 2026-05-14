@@ -1,52 +1,535 @@
 {
   "CHART_ITEMS": {
     "basico": [
-      "un tema romantico",
-      "un tema de desamor",
-      "un tema triste",
-      "un tema alegre",
-      "un tema para bailar"
+      {
+        "label": "un tema que habla de amor",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema de infidelidad o desamor",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema con tempo lento",
+        "difficulty": 7
+      },
+      {
+        "label": "un tema en ingles",
+        "difficulty": 3
+      },
+      {
+        "label": "un tema con voz femenina",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema con voz masculina",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema clásico",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema que llega a notas altas",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema con ritmo rápido",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema sin percusión",
+        "difficulty": 7
+      },
+      {
+        "label": "un tema con piano",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema con guitarra acústica",
+        "difficulty": 5
+      }
     ],
     "pop": [
-      "un tema de tan bionica",
-      "un tema de avril lavigne",
-      "un tema de shakira",
-      "un tema de ariana grande",
-      "un tema de katy perry",
-      "un tema de dua lipa",
-      "un tema de bruno mars",
-      "un tema de the weeknd",
-      "un tema de coldplay",
-      "un tema de the beatles"
-    ],
-    "jazz": [
-      "un tema de frank sinatra"
+      {
+        "label": "un tema de Taylor Swift",
+        "difficulty": 9
+      },
+      {
+        "label": "un tema de Miley Cyrus",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Harry Styles",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Dua Lipa",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de The Weeknd",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Bruno Mars",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Luis Miguel",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Lady Gaga",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Carly Simon",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Miranda",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Jonas Brothers",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Olivia Rodrigo",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Camila",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de David Bisbal",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Pablo Alborán",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Britney Spears",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Hoobastank",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Rihanna",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema en ingles",
+        "difficulty": 1
+      },
+      {
+        "label": "un tema en español",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema de ritmo acelerado",
+        "difficulty": 3
+      },
+      {
+        "label": "un tema con ritmo rápido",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema de los 2000s",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema de los 2010s",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema lanzado después de 2020",
+        "difficulty": 6
+      },
+      {
+        "label": "un feat (colaboración)",
+        "difficulty": 7
+      },
+      {
+        "label": "un tema de infidelidad o desamor",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema con voz femenina",
+        "difficulty": 2
+      },
+      {
+        "label": "un tema con voz masculina",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema con videoclip oficial",
+        "difficulty": 3
+      }
     ],
     "rock": [
-      "un tema de queen"
-    ],
-    "música clásica": [
-      "un tema de beethoven"
+      {
+        "label": "un tema de Soda Stereo",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema de Queen",
+        "difficulty": 9
+      },
+      {
+        "label": "un tema de Airbag",
+        "difficulty": 9
+      },
+      {
+        "label": "un tema de Los Abuelos de la Nada",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Guns N' Roses",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Estelares",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Redonditos de Ricota",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Kiss",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Enanitos Verdes",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Oasis",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Babasonicos",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Green Day",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Evanescence",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Ciro y los persas",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Spinetta",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Elvis Presley",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Tan Bionica",
+        "difficulty": 10
+      },
+      {
+        "label": "rock nacional",
+        "difficulty": 1
+      },
+      {
+        "label": "rock internacional",
+        "difficulty": 3
+      },
+      {
+        "label": "un tema de rock argentino pre-2010",
+        "difficulty": 2
+      },
+      {
+        "label": "un tema de rock internacional pre-2010",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema con solo de guitarra",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema con batería fuerte",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema con tempo lento",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema de los 80s",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema de los 90s",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema en ingles",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema en español",
+        "difficulty": 3
+      },
+      {
+        "label": "un tema de una banda con más de 20 años",
+        "difficulty": 2
+      }
     ],
     "folklore": [
-      "un tema de cuchi leguizamon"
-    ],
-    "hip hop": [
-      "un tema de eminem"
+      {
+        "label": "un tema de Chaqueño Palavecino",
+        "difficulty": 7
+      },
+      {
+        "label": "un tema de Mercedes Sosa",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema de Soledad Pastorutti",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema de Abel Pintos",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema de Los Manseros Santiagueños",
+        "difficulty": 9
+      },
+      {
+        "label": "un tema de Los Nocheros",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Los Tekis",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Los Carabajal",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Los Chalchaleros",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Néstor Garnica",
+        "difficulty": 10
+      },
+      {
+        "label": "una zamba",
+        "difficulty": 9
+      },
+      {
+        "label": "una chacarera",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema con bombo leguero",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema que habla de amor",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema que nombra a un lugar",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema con ritmo rápido de folklore",
+        "difficulty": 3
+      },
+      {
+        "label": "un tema de un solista",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema de un grupo",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema de folklore tradicional",
+        "difficulty": 3
+      },
+      {
+        "label": "un tema en tono mayor",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema en tono menor",
+        "difficulty": 6
+      }
     ],
     "reggaeton": [
-      "un tema de bad bunny"
+      {
+        "label": "un tema de Don Omar",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema de Plan B",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema de Bad Bunny",
+        "difficulty": 7
+      },
+      {
+        "label": "un tema de Daddy Yankee",
+        "difficulty": 7
+      },
+      {
+        "label": "un tema de Wisin & Yandel",
+        "difficulty": 9
+      },
+      {
+        "label": "un tema de Karol G",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Maluma",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Shakira",
+        "difficulty": 10
+      },
+      {
+        "label": "un feat (colaboración)",
+        "difficulty": 6
+      },
+      {
+        "label": "un reggaeton viejo (old school)",
+        "difficulty": 3
+      },
+      {
+        "label": "un reggaeton nuevo",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema de ritmo acelerado",
+        "difficulty": 2
+      },
+      {
+        "label": "un tema de infidelidad o desamor",
+        "difficulty": 5
+      },
+      {
+        "label": "un tema de un artista puertorriqueño",
+        "difficulty": 2
+      },
+      {
+        "label": "un tema de un artista colombiano",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema con uso de autotune",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema sin percusión",
+        "difficulty": 7
+      }
+    ],
+    "cuarteto": [
+      {
+        "label": "un tema de Rodrigo",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema de Luck Ra",
+        "difficulty": 7
+      },
+      {
+        "label": "un tema de Ulises Bueno",
+        "difficulty": 8
+      },
+      {
+        "label": "un tema de La Mona Jiménez",
+        "difficulty": 9
+      },
+      {
+        "label": "un tema de Banda XXI",
+        "difficulty": 9
+      },
+      {
+        "label": "un tema de La K'onga",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Desakta2",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Walter Olmos",
+        "difficulty": 10
+      },
+      {
+        "label": "un tema de Matías Valdez",
+        "difficulty": 10
+      },
+      {
+        "label": "un cuarteto de antes del 2010",
+        "difficulty": 1
+      },
+      {
+        "label": "un cuarteto moderno",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema que habla de amor",
+        "difficulty": 4
+      },
+      {
+        "label": "un tema de infidelidad o desamor",
+        "difficulty": 3
+      },
+      {
+        "label": "un tema que nombra una bebida",
+        "difficulty": 2
+      },
+      {
+        "label": "un tema con trompetas",
+        "difficulty": 3
+      },
+      {
+        "label": "un tema de un grupo",
+        "difficulty": 6
+      },
+      {
+        "label": "un tema de un solista",
+        "difficulty": 2
+      },
+      {
+        "label": "un tema con teclados marcados",
+        "difficulty": 2
+      }
     ]
   },
   "THEMES": {
     "basico": [
       {
         "label": "Can't Help Falling in Love - Elvis Presley",
-        "spotifyId": "44AyOl4qwyRqmDxYupra5q"
+        "spotifyId": "44AyOl4qVkzS48vBsbNXaC"
       },
       {
         "label": "My Heart Will Go On - Celine Dion",
-        "spotifyId": "3gcC4pNApBSMFXBOmFVKNb"
+        "spotifyId": "33LC84JgLvK2KuW43MfaNq"
       },
       {
         "label": "Someone Like You - Adele",
@@ -54,19 +537,19 @@
       },
       {
         "label": "Stay With Me - Sam Smith",
-        "spotifyId": "5ob4UfpQPjJjEjLUE0pXvj"
+        "spotifyId": "5Nm9ERjJZ5oyfXZTECKmRt"
       },
       {
         "label": "All of Me - John Legend",
-        "spotifyId": "3bidbhpOYeV9R9GrnJTfJ1"
+        "spotifyId": "3U4isOIWM3VvDubwSI3y7a"
       },
       {
         "label": "Nothing Compares 2 U - Sinéad O'Connor",
-        "spotifyId": "3DmFBFpU97g7bnAa1Yc60d"
+        "spotifyId": "5GHY1DFWKz3Prg2V0Iodqo"
       },
       {
         "label": "The Sound of Silence - Simon & Garfunkel",
-        "spotifyId": "3YfS47QufnLDFA71FUsgCq"
+        "spotifyId": "3YfS47QufnLDFA71FUsgCM"
       },
       {
         "label": "Yesterday - The Beatles",
@@ -75,292 +558,420 @@
     ],
     "pop": [
       {
-        "label": "Chica Bionica - Tan Biónica",
-        "spotifyId": "2hpLHrMCjABuFFQxoH7Fxl"
+        "label": "Flowers – Miley Cyrus",
+        "spotifyId": "7DSAEUvxU8FajXtRloy8M0"
       },
       {
-        "label": "Shake It Off - Taylor Swift",
-        "spotifyId": "0cqRj7pUJDkTCEsJkx8snD"
+        "label": "As It Was – Harry Styles",
+        "spotifyId": "4Dvkj6JhhA12EX05fT7y2e"
       },
       {
-        "label": "Rolling in the Deep - Adele",
-        "spotifyId": "4y4fIa0EBiEBiMKCTbzDDU"
+        "label": "Cruel Summer – Taylor Swift",
+        "spotifyId": "1BxfuPKGuaTgP7aM0Bbdwr"
       },
       {
-        "label": "Shape of You - Ed Sheeran",
-        "spotifyId": "7qiZfU4dY1lWllzX7mPBI3"
+        "label": "Levitating – Dua Lipa",
+        "spotifyId": "39LLxExYz6ewLAcYrzQQyP"
       },
       {
-        "label": "Blinding Lights - The Weeknd",
+        "label": "Blinding Lights – The Weeknd",
         "spotifyId": "0VjIjW4GlUZAMYd2vXMi3b"
       },
       {
-        "label": "Levitating - Dua Lipa",
-        "spotifyId": "463CkQjx2Zk1yXoBuierM9"
-      },
-      {
-        "label": "7 rings - Ariana Grande",
-        "spotifyId": "6ocbgoVGwYJhOv1GgI9NsF"
-      },
-      {
-        "label": "Roar - Katy Perry",
-        "spotifyId": "4jbmgIyjGoXjY01XxatOx6"
-      },
-      {
-        "label": "Uptown Funk - Bruno Mars",
+        "label": "Uptown Funk – Mark Ronson ft. Bruno Mars",
         "spotifyId": "32OlwWuMpZ6b0aN2RZOeMS"
       },
       {
-        "label": "bad guy - Billie Eilish",
-        "spotifyId": "2Fxmhks0bxGSBdJ92vM42m"
+        "label": "Labios de miel – Luis Miguel",
+        "spotifyId": "3td8WklPGKKDSuOHbyxRdD"
       },
       {
-        "label": "Circles - Post Malone",
-        "spotifyId": "21jGcNKet2qwijlDFuPiPb"
+        "label": "Bad Romance – Lady Gaga",
+        "spotifyId": "0SiywuOBRcynK0uKGWdCnn"
       },
       {
-        "label": "Stitches - Shawn Mendes",
-        "spotifyId": "0ewVA1Y2wUBIK4mKYMpJxV"
+        "label": "Shake It Off – Taylor Swift",
+        "spotifyId": "0cqRj7pUJDkTCEsJkx8snD"
+      },
+      {
+        "label": "You’re So Vain - Carly Simon",
+        "spotifyId": "2DnJjbjNTV9Nd5NOa1KGba"
+      },
+      {
+        "label": "Tu misterioso alguien - Miranda",
+        "spotifyId": "5BaWu0bYT7XPaIYyXJOZvJ"
+      },
+      {
+        "label": "Sucker - Jonas Brothers",
+        "spotifyId": "22vgEDb5hykfaTwLuskFGD"
+      },
+      {
+        "label": "Deja vu - Olivia Rodrigo",
+        "spotifyId": "6HU7h9RYOaPRFeh0R3UeAr"
+      },
+      {
+        "label": "Coleccionista de canciones – Camila",
+        "spotifyId": "28Ct4qwkQXY2W5yyNCLuVI"
+      },
+      {
+        "label": "Dígale – David Bisbal",
+        "spotifyId": "5OKrgU6UuGMp4sGRxv1JH2"
+      },
+      {
+        "label": "Saturno – Pablo Alborán",
+        "spotifyId": "7en0831Kv3C7qDh1kXhM9U"
+      },
+      {
+        "label": "Toxic – Britney Spears",
+        "spotifyId": "6I9VzXrHxO9rA9A5euc8Ak"
+      },
+      {
+        "label": "The Reason – Hoobastank",
+        "spotifyId": "5B5eTk7DF8KVp1zpQoY1XY"
+      },
+      {
+        "label": "Podemos - Martina Stoessel, Jorge Blanco",
+        "spotifyId": "4DeSEiyzLDuj9KZ3Dhmxxx"
+      },
+      {
+        "label": "Umbrella - Rihanna, Jay-Z",
+        "spotifyId": "49FYlytm3dAAraYgpoJZux"
       }
     ],
     "rock": [
       {
-        "label": "Bohemian Rhapsody - Queen",
-        "spotifyId": "7tFiyTwD0nx5a1eklYtX2J"
+        "label": "Mil Horas – Los Abuelos de la Nada",
+        "spotifyId": "4AvQGX7JNmA0VkwT1JmL8D"
       },
       {
-        "label": "Thunderstruck - AC/DC",
-        "spotifyId": "57bgtoPSgt236HzfBOd8kj"
+        "label": "Bohemian Rhapsody – Queen",
+        "spotifyId": "4u7EnebtmKWzUH433cf5Qv"
       },
       {
-        "label": "November Rain - Guns N' Roses",
-        "spotifyId": "0skYUMpSADPBMGosKMcpHj"
+        "label": "De música ligera – Soda Stereo",
+        "spotifyId": "4it4NYn9wNqGV54joA6oN0"
       },
       {
-        "label": "Smells Like Teen Spirit - Nirvana",
-        "spotifyId": "5ghIJDpPoe3CfHMGu71E6T"
+        "label": "Sweet Child O' Mine – Guns N' Roses",
+        "spotifyId": "7snQQk1zcKl8gZ92AnueZW"
       },
       {
-        "label": "Let It Be - The Beatles",
-        "spotifyId": "7iN1s7xHE4ifF5povM6A48"
+        "label": "Persiana Americana – Soda Stereo",
+        "spotifyId": "4iPA2yB8bK7T770EkkOi7s"
       },
       {
-        "label": "Stairway to Heaven - Led Zeppelin",
-        "spotifyId": "5CQ30WqJwcep0pYcV4AMNc"
+        "label": "Ella dijo - Estelares, Jorge Serrano",
+        "spotifyId": "6cFf4Jfy7ThUwGzbqFcZsx"
       },
       {
-        "label": "Comfortably Numb - Pink Floyd",
-        "spotifyId": "7F02x6EKYIQV3VcTaTavLE"
+        "label": "Ji Ji Ji – Patricio Rey y sus Redonditos de Ricota",
+        "spotifyId": "0VWBsKl936U9OO0zypvRCZ"
       },
       {
-        "label": "Paint It Black - The Rolling Stones",
-        "spotifyId": "6vmRRBFMYRz5Nc38Q7uFkT"
+        "label": "I Was Made For Lovin’ You - Kiss",
+        "spotifyId": "07q0QVgO56EorrSGHC48y3"
       },
       {
-        "label": "Nothing Else Matters - Metallica",
-        "spotifyId": "0yc6Gst2xkRu0iXyfm8rll"
+        "label": "Lamento Boliviano – Enanitos Verdes",
+        "spotifyId": "6Pur3hWy6Nzc27ilmsp5HA"
       },
       {
-        "label": "Everlong - Foo Fighters",
-        "spotifyId": "3skn2lauGk7Dx6bVIt5DVj"
+        "label": "Wonderwall – Oasis",
+        "spotifyId": "5qqabIl2vWzo9ApSC317sa"
       },
       {
-        "label": "Under the Bridge - RHCP",
-        "spotifyId": "3d9DCcoWTwhAB9w5bUD0QY"
+        "label": "Cae el sol - Airbag ",
+        "spotifyId": "1Mqfdem6pgGVoULjSkkcc9"
       },
       {
-        "label": "Black - Pearl Jam",
-        "spotifyId": "0u2P5u6lvoDfwTYjAADbn4"
-      }
-    ],
-    "jazz": [
-      {
-        "label": "My Way - Frank Sinatra",
-        "spotifyId": "5Qbdcq1qJWg1aaFEP3fU98"
+        "label": "Putita - Babasonicos",
+        "spotifyId": "0SaKhiBPgdRaQKA7Bxu3ek"
       },
       {
-        "label": "So What - Miles Davis",
-        "spotifyId": "7hm4HTk9encxT0LYDqtZBM"
+        "label": "I Want To Break Free - Queen",
+        "spotifyId": "1MsBRSbt5dqJSw3RxXtvCM"
       },
       {
-        "label": "A Love Supreme - John Coltrane",
-        "spotifyId": "2mzIWXXYZEuKstCvfVZNH2"
+        "label": "Boulevard Of Brokenen dreams - Green Day ",
+        "spotifyId": "5GorCbAP4aL0EJ16frG2hd"
       },
       {
-        "label": "What a Wonderful World - Louis Armstrong",
-        "spotifyId": "29U7stRjqHU6rMiS8BfaI9"
+        "label": "Bring Me To life - Evanescence",
+        "spotifyId": "0COqiPhxzoWICwFCS4eZcp"
       },
       {
-        "label": "Summertime - Ella Fitzgerald",
-        "spotifyId": "1BXedGc0kC4LPnVDMmFXue"
+        "label": "Me gusta - Ciro y los persas",
+        "spotifyId": "67Q93kXygxCskeQiIP0V0j"
       },
       {
-        "label": "Feeling Good - Nina Simone",
-        "spotifyId": "1mNXBLQFRaUf5evSWHjtXs"
+        "label": "Seguir viviendo sin tu amor – Luis Alberto Spinetta",
+        "spotifyId": "2qBirMakpTdz9ymxrZEyzg"
       },
       {
-        "label": "Almost Blue - Chet Baker",
-        "spotifyId": "5IEfHHTPIfDVXvSGLnFpUf"
+        "label": "Jailhouse Rock - Elvis Presley",
+        "spotifyId": "4gphxUgq0JSFv2BCLhNDiE"
       },
       {
-        "label": "Take Five - Dave Brubeck",
-        "spotifyId": "1YQWosTIljIvxAgHWTp7KP"
+        "label": "La Ciudad de la Furia – Soda Stereo",
+        "spotifyId": "5wjiZSbxaLyLpGimpwqh1H"
       },
       {
-        "label": "Waltz for Debby - Bill Evans",
-        "spotifyId": "2nGFzvICaeEWjIrBrL2RAx"
-      },
-      {
-        "label": "Round Midnight - Thelonious Monk",
-        "spotifyId": "3gZb8ggeW45RUHCBBRkHQE"
-      }
-    ],
-    "música clásica": [
-      {
-        "label": "Para Elisa - Beethoven",
-        "spotifyId": "70TI9J2rsGIuXyFqVzOswh"
-      },
-      {
-        "label": "Sinfonía 40 - Mozart",
-        "spotifyId": "5HKgJ5RMFHM0vYV6QWLVmq"
-      },
-      {
-        "label": "Tocata y Fuga - Bach",
-        "spotifyId": "3MqNOGHHQiM5cF6tPhcBMK"
-      },
-      {
-        "label": "Nocturno Op.9 - Chopin",
-        "spotifyId": "0fWFuJtdLOxSo5V1f3oXz3"
-      },
-      {
-        "label": "Las Cuatro Estaciones - Vivaldi",
-        "spotifyId": "6UcNKPbJObDRuSBSTLpB5L"
-      },
-      {
-        "label": "Claro de Luna - Debussy",
-        "spotifyId": "7JVNZfZ7rEVRGPqBFbzDHb"
-      },
-      {
-        "label": "El Lago de los Cisnes - Tchaikovsky",
-        "spotifyId": "3PUxrVQi6MiFYJTsKbHkVu"
-      },
-      {
-        "label": "Sinfonía Inconclusa - Schubert",
-        "spotifyId": "2BHBVqTiNHHMgYNXr29zfF"
+        "label": "Arruinarse - Tan Biónica, Airbag (en vivo river)",
+        "spotifyId": "7GSS3AEO9emTV5yXJ66V0i"
       }
     ],
     "folklore": [
       {
-        "label": "Zamba para Olvidar - Cuchi Leguizamón",
-        "spotifyId": "6c2y2BKBXgkKlBzBJsF4N2"
+        "label": "Chacarera del Rancho - Los nocheros ",
+        "spotifyId": "7FxhDl2TtdtWa7P490QGTS"
       },
       {
-        "label": "Luna Tucumana - Atahualpa Yupanqui",
-        "spotifyId": "3t9n0aTzUuQAJ2E9KXCbOy"
+        "label": "Zamba para olvidarte – Mercedes Sosa, Diego Torres",
+        "spotifyId": "6LLOYYePoJZs8Gy7FmoZ7o"
       },
       {
-        "label": "Todo Cambia - Mercedes Sosa",
-        "spotifyId": "7JdRUeFHEPEkrDkCaLdRF7"
+        "label": "El Humahuaqueño – Los Tekis",
+        "spotifyId": "7sm0g9fZHv8ZC7r4kDge74"
       },
       {
-        "label": "Kilómetro 11 - Los Chalchaleros",
-        "spotifyId": "2tEMqMuYBKjcm7YXwDJlAZ"
+        "label": "Chacarera del Olvido - El Chaqueño Palavecino",
+        "spotifyId": "1TsrW24N0hgAlOWNCTjIlL"
       },
       {
-        "label": "No Soy de Aquí - Facundo Cabral",
-        "spotifyId": "4c8XPBQ1ynLNVk1FdSUGj6"
+        "label": "Entre a mi pago sin golpear – Soledad Pastorutti",
+        "spotifyId": "6W5nrs6SqETt1et20bTtFa"
       },
       {
-        "label": "Recuerdo - Horacio Guaraní",
-        "spotifyId": "0h7GNRqDInj3OmqXfPkGz7"
+        "label": "La Taleñita – El Chaqueño Palavecino",
+        "spotifyId": "4WNLvcC5EbYYCVKFCFvNU7"
       },
       {
-        "label": "El Cóndor Pasa - Los Fronterizos",
-        "spotifyId": "5Fh2bFiHXgONJcfP8LfyXa"
+        "label": "Zona de promesas - Mercedes Sosa, Gustavo Cerati",
+        "spotifyId": "1YBSWq2Wc7cwgHgvHvMm2Z"
       },
       {
-        "label": "Misa Criolla - Ariel Ramírez",
-        "spotifyId": "5jZCH4fELJJhJqBnDVWXQB"
-      }
-    ],
-    "hip hop": [
-      {
-        "label": "Lose Yourself - Eminem",
-        "spotifyId": "7MJQ9Nfxzh8LPZ9e9u68Fj"
+        "label": "Oncemil – Abel Pintos",
+        "spotifyId": "3y5ahYM9zwyOCt3mieZ0PZ"
       },
       {
-        "label": "HUMBLE. - Kendrick Lamar",
-        "spotifyId": "5K4W6rqBFWDnAN6FQUkS6x"
+        "label": "Al Jardín de la República - Mercedes Sosa",
+        "spotifyId": "04MnXhLO7W7MXXMQi46TR2"
       },
       {
-        "label": "99 Problems - Jay-Z",
-        "spotifyId": "6nKGj4WU7BmcNMYYEkfFwJ"
+        "label": "Déjame que me vaya – Los Carabajal",
+        "spotifyId": "0i06kFKnrk6AXb2qibUNq9"
       },
       {
-        "label": "N.Y. State of Mind - Nas",
-        "spotifyId": "6tIpBj0HHNDmEpGm4lc7EE"
+        "label": "La ley y la trampa – Chaqueño Palavecino",
+        "spotifyId": "1NSDtKaDGoX58uF3g3iU0I"
       },
       {
-        "label": "Drop It Like It's Hot - Snoop Dogg",
-        "spotifyId": "5tFMHFNf4JZinxRnAbOUNE"
+        "label": "Zamba de mi esperanza – Los Chalchaleros",
+        "spotifyId": "2JibRXN6P8Iz128AIai3rg"
       },
       {
-        "label": "God's Plan - Drake",
-        "spotifyId": "6DCZcSspjsKoFjzjrWbKbs"
+        "label": "Tren del cielo - Soledad Pastorutti",
+        "spotifyId": "3AEu6lNmtiL42QCfMp0BMQ"
       },
       {
-        "label": "POWER - Kanye West",
-        "spotifyId": "2gZUPNdnz5Y45yvgmVBeYm"
+        "label": "Motivos – Abel Pintos",
+        "spotifyId": "2n8VYWU3mMrziR2ua8leHu"
       },
       {
-        "label": "No Role Modelz - J. Cole",
-        "spotifyId": "58ge6dfP91o9oXMzq3XkIS"
+        "label": "Cien años - Abel pintos ",
+        "spotifyId": "1HroyPv5zqHJI35kqObRLy"
       },
       {
-        "label": "Hypnotize - Biggie Smalls",
-        "spotifyId": "0uYB8UKq9X5jITiXv5RRcR"
+        "label": "A Don Ata – Soledad Pastorutti",
+        "spotifyId": "3NKCYnaiQjR7abtjMjmef1"
       },
       {
-        "label": "California Love - Tupac",
-        "spotifyId": "5mz0i3YAHkLkLy4rBkJYAA"
+        "label": "Mocito salamanquero – Los Manseros Santiagueños",
+        "spotifyId": "25wtr4sDWihCbIXdCDBRt0"
+      },
+      {
+        "label": "Chacarera del violín - Néstor Garnica",
+        "spotifyId": "58G4tOpnc6iORxFjEWfW5W"
+      },
+      {
+        "label": "Eterno amor – Los Manseros Santiagueños",
+        "spotifyId": "4fhQ48hixjThGi2za030We"
+      },
+      {
+        "label": "Juan de la Calle - Chaqueño Palavecino",
+        "spotifyId": "5IX9B2J3JzHw3xyzCk266i"
       }
     ],
     "reggaeton": [
       {
-        "label": "Tití Me Preguntó - Bad Bunny",
-        "spotifyId": "5HCyWlXZPP0y6Gqq8TgA20"
-      },
-      {
-        "label": "Mi Gente - J Balvin",
-        "spotifyId": "5SI2KFsMgRRSoZJOqBsHE0"
-      },
-      {
         "label": "Gasolina - Daddy Yankee",
-        "spotifyId": "21OLvKXCMkHEaFN5xFBImQ"
+        "spotifyId": "5YoITs1m0q8UOQ4AW7N5ga"
       },
       {
-        "label": "Taki Taki - Ozuna",
-        "spotifyId": "3bZ7xEDV7mQ3JqCFo7lCME"
+        "label": "Danza Kuduro - Don Omar, Lucenzo",
+        "spotifyId": "2a1o6ZejUi8U3wzzOtCOYw"
       },
       {
-        "label": "Hawái - Maluma",
-        "spotifyId": "6n0oJqhyJUB4jLLw9hFHH6"
+        "label": "Mi Vecinita - Plan B",
+        "spotifyId": "4Yu2UoU9qNlYL9GeIH65P5"
       },
       {
-        "label": "Todo de Ti - Rauw Alejandro",
-        "spotifyId": "07c1AzRWL5i4U8UJQVN4XL"
+        "label": "Fanatica Sensual - Plan B",
+        "spotifyId": "1DrDfpOx4P4LMxFhtOmeyD"
       },
       {
-        "label": "BICHOTA - Karol G",
-        "spotifyId": "4VqPOruhp5EdPBeR92t6lQ"
+        "label": "Dile - Don Omar",
+        "spotifyId": "69Ej1xrGjOcHvIMtMKxK0G"
       },
       {
-        "label": "El Perdón - Nicky Jam",
-        "spotifyId": "6l8GvAyoUZwWDgF1e4822w"
+        "label": "Candy - Plan B",
+        "spotifyId": "2cRtuTadVm0JzoW4NNTIqI"
       },
       {
-        "label": "Nota de Voz - Wisin & Yandel",
-        "spotifyId": "3kWr1HZiJNV6lHFJv6V4lC"
+        "label": "Lo que pasó, pasó – Daddy Yankee",
+        "spotifyId": "40a82F3K2UTbeoLlXXXZBd"
+      },
+      {
+        "label": "Tusa – Karol G, Nicki Minaj",
+        "spotifyId": "7k4t7uLgtOxPwTpFmtJNTY"
+      },
+      {
+        "label": "Choca - Plan B ",
+        "spotifyId": "5E0gsHgrsCwG4FxTit0ltJ"
+      },
+      {
+        "label": "Tití me Preguntó – Bad Bunny ",
+        "spotifyId": "1IHWl5LamUGEuP4ozKQSXZ"
+      },
+      {
+        "label": "Borró Cassette – Maluma",
+        "spotifyId": "6DUdDIRgLqCGq1DwkNWQTN"
+      },
+      {
+        "label": "Bailá Morena – Hector & Tito, Don Omar",
+        "spotifyId": "0n5m2F0dgKM1cHQxMs4qgl"
+      },
+      {
+        "label": "Virtual Diva - Don Omar ",
+        "spotifyId": "0vnzk4L0JyMODSqLp3pHwo"
+      },
+      {
+        "label": "Rakata - Wisin & Yandel",
+        "spotifyId": "1kQqiC1rS1FiuVpeBKN0QN"
+      },
+      {
+        "label": "Monaco - Bad Bunny",
+        "spotifyId": "4MjDJD8cW7iVeWInc2Bdyj"
+      },
+      {
+        "label": "EoO - Bad Bunny",
+        "spotifyId": "6J5kc12BW5HuP3d7C3vvx8"
+      },
+      {
+        "label": "Llamado de emergencia - Daddy Yankee",
+        "spotifyId": "47cVjB6QKLkV8RgzGLNJOU"
+      },
+      {
+        "label": "Ahora Es - Wisin & Yandel",
+        "spotifyId": "15wPtgg6jsyMLhIkjcSpl4"
+      },
+      {
+        "label": "Sábado Rebelde - Daddy Yankee, Plan B",
+        "spotifyId": "00C97lUG7Y0TY0KLv7p32h"
+      },
+      {
+        "label": "La Tortura - Shakira ft. Alejandro Sanz",
+        "spotifyId": "53AafWSzYsiJKnAtJTUB5f"
+      },
+      {
+        "label": "Dale Don Dale - Don Omar",
+        "spotifyId": "1PZrHbJjt5t7dP9OGRxcD0"
+      },
+      {
+        "label": "Baile Inolvidable - Bad Bunny",
+        "spotifyId": "2lTm559tuIvatlT1u0JYG2"
+      }
+    ],
+    "cuarteto": [
+      {
+        "label": "Ocho Cuarenta - Rodrigo",
+        "spotifyId": "6jDx3MNG0yJdrvEBZohKBE"
+      },
+      {
+        "label": "Beso a Beso - La Mona Jiménez",
+        "spotifyId": "0vV3UvotpuHNC3mmKbUpSS"
+      },
+      {
+        "label": "Soy Cordobés - Rodrigo",
+        "spotifyId": "5wG4J1UECH0c42YhMhSkcS"
+      },
+      {
+        "label": "La Mano de Dios - Rodrigo",
+        "spotifyId": "1IRqkju5P1IF9nh7NQyjVJ"
+      },
+      {
+        "label": "Quien se ha tomado todo el vino - La Mona Jiménez",
+        "spotifyId": "0KZLWOKEM38ZYSV78Z6na1"
+      },
+      {
+        "label": "Ya no vuelvas - Luck Ra, La K'onga & Ke Personajes",
+        "spotifyId": "6jRZ33ifS5VOTMwmPxhPhN"
+      },
+      {
+        "label": "La Morocha - Luck Ra ft. BM",
+        "spotifyId": "7aPsseax6rNFyipHn9A5CR"
+      },
+      {
+        "label": "Que me falte todo - Luck Ra, Abel Pintos",
+        "spotifyId": "1NMbORRsowjN8q000xlJ8l"
+      },
+      {
+        "label": "Dale Vieja Dale - Ulises Bueno",
+        "spotifyId": "6bDBI3DBv9v6HyuSOapcvQ"
+      },
+      {
+        "label": "Intento - Ulises Bueno",
+        "spotifyId": "4jycbkcVlL5P7W2zGYcau0"
+      },
+      {
+        "label": "Olvidala - Banda XXI",
+        "spotifyId": "1gh25NNGoR9xZrGBVBai7s"
+      },
+      {
+        "label": "Hola perdida - Luck Ra, Khea",
+        "spotifyId": "10eRgZUM59q2G5ogpztSeL"
+      },
+      {
+        "label": "La Diabla - Desakta2",
+        "spotifyId": "1q6mSPkSo6uQ9m2WbfcZAh"
+      },
+      {
+        "label": "Adicto a Ti - Walter Olmos",
+        "spotifyId": "53p8lIxLmoCoBINK0zuQ4G"
+      },
+      {
+        "label": "El Bombón - Banda XXI",
+        "spotifyId": "2gmkueoUGMjuVAualbEPAf"
+      },
+      {
+        "label": "Amor Clasificado - Rodrigo",
+        "spotifyId": "5MK642wCaNr9hRDZ3kWyDX"
+      },
+      {
+        "label": "Lo Mejor del Amor - Rodrigo",
+        "spotifyId": "2POTQjCiCtUyUZFNQYlM7z"
+      },
+      {
+        "label": "Latidos - Matías Valdez",
+        "spotifyId": "2WFrChyI5KlmxunG45Sqws"
+      },
+      {
+        "label": "Ahora Mirame - Ulises Bueno",
+        "spotifyId": "2WFrChyI5KlmxunG45Sqws"
+      },
+      {
+        "label": "Un Siglo Sin Ti - Luck Ra, Chayanne",
+        "spotifyId": "2AFC9ad4nGauS1cgm7FCqU"
       }
     ]
   },

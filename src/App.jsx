@@ -106,6 +106,7 @@ function App() {
             resetGame={onlineGame.resetOnlineGame}
             markCell={onlineGame.markCell}
             nextSong={onlineGame.nextSong}
+            resolveReview={onlineGame.resolveReview}
           />
         )}
 

@@ -83,22 +83,20 @@ function setupRoomHandlers(socket, roomManager, clientIp) {
             t => t.name === theme.name && t.contributorId === player.playerId
           );
 
+          const themeData = {
+            name: theme.name,
+            // Support both new music format { songs, fillers } and legacy { words }
+            songs: theme.songs || [],
+            fillers: theme.fillers || [],
+            words: theme.words || [],
+            contributorId: player.playerId,
+            contributorName: player.name
+          };
+
           if (existingIndex >= 0) {
-            // Update existing theme
-            room.contributedThemes[existingIndex] = {
-              name: theme.name,
-              words: theme.words,
-              contributorId: player.playerId,
-              contributorName: player.name
-            };
+            room.contributedThemes[existingIndex] = themeData;
           } else {
-            // Add new theme
-            room.contributedThemes.push({
-              name: theme.name,
-              words: theme.words,
-              contributorId: player.playerId,
-              contributorName: player.name
-            });
+            room.contributedThemes.push(themeData);
           }
         });
 

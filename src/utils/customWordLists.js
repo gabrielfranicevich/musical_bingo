@@ -103,3 +103,57 @@ export const validateWordList = (words) => {
     errors
   };
 };
+
+// ─── Music Themes ──────────────────────────────────────────────────────────────
+
+const MUSIC_THEMES_KEY = 'customMusicThemes';
+
+/**
+ * Load all custom music themes from localStorage.
+ * Structure: { "Theme Name": { songs: [{label, spotifyId, difficulty}], fillers: [{label, difficulty}] } }
+ * @returns {Object}
+ */
+export const loadMusicThemes = () => {
+  try {
+    const stored = localStorage.getItem(MUSIC_THEMES_KEY);
+    return stored ? JSON.parse(stored) : {};
+  } catch (error) {
+    console.error('Error loading music themes:', error);
+    return {};
+  }
+};
+
+/**
+ * Save (or update) a single music theme.
+ * @param {string} name - Theme name
+ * @param {{ songs: Array, fillers: Array }} data
+ * @returns {boolean}
+ */
+export const saveMusicTheme = (name, data) => {
+  try {
+    const themes = loadMusicThemes();
+    themes[name] = data;
+    localStorage.setItem(MUSIC_THEMES_KEY, JSON.stringify(themes));
+    return true;
+  } catch (error) {
+    console.error('Error saving music theme:', error);
+    return false;
+  }
+};
+
+/**
+ * Delete a music theme by name.
+ * @param {string} name
+ * @returns {boolean}
+ */
+export const deleteMusicTheme = (name) => {
+  try {
+    const themes = loadMusicThemes();
+    delete themes[name];
+    localStorage.setItem(MUSIC_THEMES_KEY, JSON.stringify(themes));
+    return true;
+  } catch (error) {
+    console.error('Error deleting music theme:', error);
+    return false;
+  }
+};

@@ -75,3 +75,17 @@
 .animate-confeti {
   animation: confeti-fall linear infinite;
 }
+
+@keyframes equalizerBounce {
+  0%   { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes pulse-neon {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}

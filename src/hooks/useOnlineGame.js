@@ -162,10 +162,14 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
 
     const selectedGenres = roomData.settings.selectedGenres || ['basico'];
 
-    // Flatten CHART_ITEMS for the selected genres → pool of card labels
-    const cardItems = [...new Set(
-      selectedGenres.flatMap(genre => CHART_ITEMS[genre] || [])
-    )];
+    // Flatten CHART_ITEMS for the selected genres and deduplicate by label
+    const itemsMap = new Map();
+    selectedGenres.flatMap(genre => CHART_ITEMS[genre] || []).forEach(item => {
+      if (!itemsMap.has(item.label) || item.difficulty < itemsMap.get(item.label).difficulty) {
+        itemsMap.set(item.label, item);
+      }
+    });
+    const cardItems = Array.from(itemsMap.values());
 
     socket.emit('startGame', { roomId, cardItems });
   }, [socket, isHost, roomId, roomData]);
@@ -176,9 +180,15 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
     }
   }, [socket, roomId]);
 
-  const nextSong = useCallback(() => {
+  const nextSong = useCallback((spotifyId) => {
     if (socket && roomId && isHost) {
-      socket.emit('nextSong', { roomId });
+      socket.emit('nextSong', { roomId, spotifyId: spotifyId || null });
+    }
+  }, [socket, roomId, isHost]);
+
+  const resolveReview = useCallback((accepted) => {
+    if (socket && roomId && isHost) {
+      socket.emit('resolveReview', { roomId, accepted });
     }
   }, [socket, roomId, isHost]);
 
@@ -203,5 +213,6 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
     startOnlineGame,
     markCell,
     nextSong,
+    resolveReview,
   };
 };
