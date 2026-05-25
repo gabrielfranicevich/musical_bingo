@@ -35,7 +35,7 @@ const WaitingRoomHeader = ({ roomName, roomId, onLeave }) => {
         >
           <ArrowLeft size={28} />
         </button>
-        <div className="text-center flex flex-col items-center">
+        <div className="text-center flex flex-col items-center max-w-[calc(100%-5rem)] px-2">
           <div className="flex items-end gap-1 mb-1 animate-sound-wave">
             <div className="w-1.5 h-3 bg-brand-cyan rounded-full"></div>
             <div className="w-1.5 h-6 bg-brand-pink rounded-full"></div>
@@ -44,7 +44,7 @@ const WaitingRoomHeader = ({ roomName, roomId, onLeave }) => {
             <div className="w-1.5 h-2 bg-brand-pink rounded-full"></div>
           </div>
           <h1 className="text-xs font-bold text-neon-pink uppercase tracking-widest drop-shadow-md">SALA</h1>
-          <h2 className="text-4xl font-black text-brand-white tracking-widest drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] uppercase">{roomName}</h2>
+          <h2 className="text-3xl font-black text-brand-white tracking-wider drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] uppercase w-full truncate">{roomName}</h2>
         </div>
       </div>
 

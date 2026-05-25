@@ -168,21 +168,28 @@ function setupGameHandlers(socket, roomManager) {
     const player = room.players.find(p => p.id === socket.id);
     if (!player) return;
 
-    // One mark per song enforcement
-    if (room.gameData.marksThisSong[player.playerId]) {
+    const card = room.gameData.cards[player.playerId];
+    if (!card || !card[row] || !card[row][col]) return;
+
+    const isCurrentlyMarked = card[row][col].marked;
+
+    // Block marking a NEW cell if already marked this song, but always allow UNMARKING
+    if (!isCurrentlyMarked && room.gameData.marksThisSong[player.playerId]) {
       console.log(`Player ${player.name} tried to mark again this song — ignored`);
       return;
     }
 
-    const card = room.gameData.cards[player.playerId];
-    if (!card || !card[row] || !card[row][col]) return;
-
     // Toggle the cell
-    card[row][col].marked = !card[row][col].marked;
+    card[row][col].marked = !isCurrentlyMarked;
 
-    // Record that this player has marked for this song
-    if (card[row][col].marked) {
+    if (!isCurrentlyMarked) {
+      // Just marked
       room.gameData.marksThisSong[player.playerId] = true;
+      card[row][col].markedAtSong = room.gameData.currentSongIndex;
+    } else {
+      // Just unmarked — free up mark slot for this song
+      delete card[row][col].markedAtSong;
+      delete room.gameData.marksThisSong[player.playerId];
     }
 
     const settings = room.settings;
@@ -200,6 +207,7 @@ function setupGameHandlers(socket, roomManager) {
         claimantName: player.name,
         claimantCard: card.map(r => r.map(c => ({ ...c }))), // deep copy
         winningPattern,
+        currentSongIndex: room.gameData.currentSongIndex,
         songsPlayed: room.gameData.songsPlayed || [],
       };
       console.log(`BINGO claimed by ${player.name} in room ${roomId} — entering review`);

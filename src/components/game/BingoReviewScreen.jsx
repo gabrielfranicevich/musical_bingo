@@ -2,14 +2,47 @@
  * BingoReviewScreen — shown when gameState === 'reviewing'.
  *
  * Props:
- *   review:        { claimantId, claimantName, claimantCard, winningPattern, currentSongIndex }
+ *   review:        { claimantId, claimantName, claimantCard, winningPattern, currentSongIndex, songsPlayed }
  *   isHost:        bool
  *   resolveReview: (accepted: bool) => void
  */
+
+/** Extract only the cells that form the winning pattern line. */
+function getWinningCells(card, pattern) {
+  if (!pattern || !card || card.length === 0) return [];
+  const rows = card.length;
+  const cols = card[0]?.length || 0;
+
+  if (pattern.type === 'preset') {
+    if (pattern.id === 'horizontal') {
+      for (let r = 0; r < rows; r++) {
+        if (card[r].every(cell => cell.marked)) {
+          return card[r].map((cell, c) => ({ ...cell, row: r, col: c }));
+        }
+      }
+    } else if (pattern.id === 'vertical') {
+      for (let c = 0; c < cols; c++) {
+        if (card.every(row => row[c]?.marked)) {
+          return card.map((row, r) => ({ ...row[c], row: r, col: c }));
+        }
+      }
+    } else if (pattern.id === 'diagonal') {
+      const mainDiag = rows === cols && card.every((row, i) => row[i]?.marked);
+      const antiDiag = rows === cols && card.every((row, i) => row[cols - 1 - i]?.marked);
+      if (mainDiag) return card.map((row, i) => ({ ...row[i], row: i, col: i }));
+      if (antiDiag) return card.map((row, i) => ({ ...row[cols - 1 - i], row: i, col: cols - 1 - i }));
+    }
+  } else if (pattern.type === 'custom' && Array.isArray(pattern.cells)) {
+    return pattern.cells.map(([r, c]) => ({ ...card[r]?.[c], row: r, col: c }));
+  }
+  return [];
+}
+
 const BingoReviewScreen = ({ review, isHost, resolveReview }) => {
   if (!review) return null;
 
   const { claimantName, claimantCard, winningPattern } = review;
+  const winningCells = getWinningCells(claimantCard, winningPattern);
 
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
@@ -41,31 +74,31 @@ const BingoReviewScreen = ({ review, isHost, resolveReview }) => {
           )}
         </div>
 
-        {/* Claimant card (read-only) */}
-        {claimantCard && (
+        {/* Winning pattern cells */}
+        {winningCells.length > 0 && (
           <div>
-            <p className="text-xs text-brand-light/50 text-center uppercase tracking-widest font-bold mb-2">
-              Cartón del jugador
+            <p className="text-xs text-brand-light/50 text-center uppercase tracking-widest font-bold mb-3">
+              🎵 Canciones del patrón ganador
             </p>
-            <div
-              className="grid gap-1"
-              style={{ gridTemplateColumns: `repeat(${claimantCard[0]?.length || 3}, minmax(0, 1fr))` }}
-            >
-              {claimantCard.map((row, r) =>
-                row.map((cell, c) => (
-                  <div
-                    key={`${r}-${c}`}
-                    className={[
-                      'flex items-center justify-center rounded-lg text-center text-[0.55rem] leading-tight font-semibold p-1 min-h-[2.5rem] border',
-                      cell.marked
-                        ? 'bg-brand-cyan/20 border-brand-cyan text-brand-cyan shadow-[0_0_8px_rgba(0,242,254,0.4)]'
-                        : 'bg-white/5 border-brand-light/10 text-brand-light/50',
-                    ].join(' ')}
-                  >
-                    {cell.label}
+            <div className="flex flex-col gap-2">
+              {winningCells.map((cell, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center justify-between rounded-xl border border-brand-cyan/40 bg-brand-cyan/10 px-4 py-2.5 shadow-[0_0_8px_rgba(0,242,254,0.2)]"
+                >
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-brand-cyan text-base shrink-0">✓</span>
+                    <span className="text-sm font-semibold text-brand-white truncate">
+                      {cell.label}
+                    </span>
                   </div>
-                ))
-              )}
+                  <span className="text-xs font-black text-brand-cyan/70 uppercase tracking-widest shrink-0 ml-2 bg-black/30 px-2 py-0.5 rounded-lg border border-brand-cyan/20">
+                    {cell.markedAtSong !== undefined
+                      ? `Canción #${cell.markedAtSong + 1}`
+                      : '—'}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         )}

@@ -31,16 +31,13 @@ const BingoAdvancedSettings = ({ settings, onUpdateSettings }) => {
   };
 
   // --- Matrix size ---
-  const setRows = (v) => {
-    const rows = Math.max(1, Math.min(8, parseInt(v) || 3));
-    onUpdateSettings({ matrixSize: { ...matrixSize, rows } });
-    // also reset custom patterns since grid changed
-    onUpdateSettings({ customPatterns: [] });
+  const setRows = (delta) => {
+    const rows = Math.max(1, Math.min(8, matrixSize.rows + delta));
+    onUpdateSettings({ matrixSize: { ...matrixSize, rows }, customPatterns: [] });
   };
-  const setCols = (v) => {
-    const cols = Math.max(1, Math.min(8, parseInt(v) || 3));
-    onUpdateSettings({ matrixSize: { ...matrixSize, cols } });
-    onUpdateSettings({ customPatterns: [] });
+  const setCols = (delta) => {
+    const cols = Math.max(1, Math.min(8, matrixSize.cols + delta));
+    onUpdateSettings({ matrixSize: { ...matrixSize, cols }, customPatterns: [] });
   };
 
   // --- Preset patterns ---
@@ -149,26 +146,44 @@ const BingoAdvancedSettings = ({ settings, onUpdateSettings }) => {
           <div>
             <p className="text-xs font-bold text-brand-light/60 uppercase tracking-widest mb-3 drop-shadow-sm">Dimensiones del Cartón</p>
             <div className="flex items-center gap-4 bg-black/20 p-4 rounded-xl border border-brand-light/5">
+              {/* Rows stepper */}
               <div className="flex flex-col items-center gap-1">
                 <label className="text-xs text-brand-light/50 font-bold uppercase">Filas</label>
-                <input
-                  id="matrix-rows"
-                  type="number" min="1" max="8"
-                  value={matrixSize.rows}
-                  onChange={e => setRows(e.target.value)}
-                  className="w-16 text-center rounded-xl border border-brand-light/20 bg-black/40 py-1.5 text-sm font-bold text-neon-cyan focus:outline-none focus:border-brand-cyan focus:shadow-neon-cyan"
-                />
+                <div className="flex items-center gap-1">
+                  <button
+                    id="matrix-rows-minus"
+                    onClick={() => setRows(-1)}
+                    disabled={matrixSize.rows <= 1}
+                    className="w-7 h-7 rounded-lg border border-brand-light/20 bg-black/40 text-neon-cyan font-black text-base flex items-center justify-center disabled:opacity-30 hover:border-brand-cyan/60 active:scale-90 transition-all"
+                  >−</button>
+                  <span id="matrix-rows-value" className="w-7 text-center text-sm font-black text-neon-cyan">{matrixSize.rows}</span>
+                  <button
+                    id="matrix-rows-plus"
+                    onClick={() => setRows(1)}
+                    disabled={matrixSize.rows >= 8}
+                    className="w-7 h-7 rounded-lg border border-brand-light/20 bg-black/40 text-neon-cyan font-black text-base flex items-center justify-center disabled:opacity-30 hover:border-brand-cyan/60 active:scale-90 transition-all"
+                  >+</button>
+                </div>
               </div>
               <span className="text-brand-light/40 font-bold text-xl mt-4">×</span>
+              {/* Cols stepper */}
               <div className="flex flex-col items-center gap-1">
                 <label className="text-xs text-brand-light/50 font-bold uppercase">Cols</label>
-                <input
-                  id="matrix-cols"
-                  type="number" min="1" max="8"
-                  value={matrixSize.cols}
-                  onChange={e => setCols(e.target.value)}
-                  className="w-16 text-center rounded-xl border border-brand-light/20 bg-black/40 py-1.5 text-sm font-bold text-neon-cyan focus:outline-none focus:border-brand-cyan focus:shadow-neon-cyan"
-                />
+                <div className="flex items-center gap-1">
+                  <button
+                    id="matrix-cols-minus"
+                    onClick={() => setCols(-1)}
+                    disabled={matrixSize.cols <= 1}
+                    className="w-7 h-7 rounded-lg border border-brand-light/20 bg-black/40 text-neon-cyan font-black text-base flex items-center justify-center disabled:opacity-30 hover:border-brand-cyan/60 active:scale-90 transition-all"
+                  >−</button>
+                  <span id="matrix-cols-value" className="w-7 text-center text-sm font-black text-neon-cyan">{matrixSize.cols}</span>
+                  <button
+                    id="matrix-cols-plus"
+                    onClick={() => setCols(1)}
+                    disabled={matrixSize.cols >= 8}
+                    className="w-7 h-7 rounded-lg border border-brand-light/20 bg-black/40 text-neon-cyan font-black text-base flex items-center justify-center disabled:opacity-30 hover:border-brand-cyan/60 active:scale-90 transition-all"
+                  >+</button>
+                </div>
               </div>
               <span className="text-xs text-brand-light/40 mt-4 uppercase tracking-widest flex-1 text-right">= {matrixSize.rows * matrixSize.cols} casillas</span>
             </div>
