@@ -24,7 +24,7 @@ const { getLocalIp } = require('./server/utils.cjs');
 const { setupRoomHandlers } = require('./server/roomHandlers.cjs');
 const { setupGameHandlers } = require('./server/gameHandlers.cjs');
 const { setupLanHandlers } = require('./server/lanHandlers.cjs');
-const { setupDisconnectHandler } = require('./server/disconnectHandler.cjs');
+const { setupDisconnectHandler, setupPeriodicCleanup } = require('./server/disconnectHandler.cjs');
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -111,6 +111,9 @@ app.use((req, res, next) => {
 
 // Initialize RoomManager
 const roomManager = new RoomManager(io);
+
+// Start periodic room cleanup
+setupPeriodicCleanup(roomManager);
 
 // Socket.IO connection handler
 io.on('connection', (socket) => {
