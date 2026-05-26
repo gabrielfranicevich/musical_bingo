@@ -81,7 +81,7 @@ const HostDJPanel = ({ selectedGenres = ['basico'], onNextSong }) => {
     const next = localIndex + 1;
     setLocalIndex(next);
     const nextTrack = songQueue[next];
-    onNextSong(nextTrack?.spotifyId || null);
+    onNextSong(nextTrack?.spotifyId || null, nextTrack?.label || null);
     if (controllerRef.current && nextTrack?.spotifyId) {
       controllerRef.current.loadUri(`spotify:track:${nextTrack.spotifyId}`);
       controllerRef.current.play();

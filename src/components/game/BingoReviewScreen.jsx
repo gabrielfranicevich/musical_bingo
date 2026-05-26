@@ -94,7 +94,8 @@ const BingoReviewScreen = ({ review, isHost, resolveReview }) => {
                   </div>
                   <span className="text-xs font-black text-brand-cyan/70 uppercase tracking-widest shrink-0 ml-2 bg-black/30 px-2 py-0.5 rounded-lg border border-brand-cyan/20">
                     {cell.markedAtSong !== undefined
-                      ? `Canción #${cell.markedAtSong + 1}`
+                      ? (review.songsPlayed?.[cell.markedAtSong]?.label 
+                          || `Canción #${cell.markedAtSong + 1}`)
                       : '—'}
                   </span>
                 </div>

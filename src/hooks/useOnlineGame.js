@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useSocketConnection } from './game/useSocketConnection';
-import { CHART_ITEMS, DEFAULT_MATRIX, DEFAULT_PATTERNS } from '../data/constants';
+import { getCardItemsForGenres, DEFAULT_MATRIX, DEFAULT_PATTERNS } from '../data/constants';
 
 export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
   const { socket, isConnected } = useSocketConnection();
@@ -162,14 +162,8 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
 
     const selectedGenres = roomData.settings.selectedGenres || ['basico'];
 
-    // Flatten CHART_ITEMS for the selected genres and deduplicate by label
-    const itemsMap = new Map();
-    selectedGenres.flatMap(genre => CHART_ITEMS[genre] || []).forEach(item => {
-      if (!itemsMap.has(item.label) || item.difficulty < itemsMap.get(item.label).difficulty) {
-        itemsMap.set(item.label, item);
-      }
-    });
-    const cardItems = Array.from(itemsMap.values());
+    // Dynamically calculate card items and difficulties based on active genres
+    const cardItems = getCardItemsForGenres(selectedGenres);
 
     socket.emit('startGame', { roomId, cardItems });
   }, [socket, isHost, roomId, roomData]);
@@ -180,9 +174,9 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
     }
   }, [socket, roomId]);
 
-  const nextSong = useCallback((spotifyId) => {
+  const nextSong = useCallback((spotifyId, label) => {
     if (socket && roomId && isHost) {
-      socket.emit('nextSong', { roomId, spotifyId: spotifyId || null });
+      socket.emit('nextSong', { roomId, spotifyId: spotifyId || null, label: label || null });
     }
   }, [socket, roomId, isHost]);
 

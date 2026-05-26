@@ -33,11 +33,17 @@ const BingoAdvancedSettings = ({ settings, onUpdateSettings }) => {
   // --- Matrix size ---
   const setRows = (delta) => {
     const rows = Math.max(1, Math.min(8, matrixSize.rows + delta));
-    onUpdateSettings({ matrixSize: { ...matrixSize, rows }, customPatterns: [] });
+    const newWinningPatterns = rows !== matrixSize.cols 
+      ? winningPatterns.map(p => p.id === 'diagonal' ? { ...p, enabled: false } : p)
+      : winningPatterns;
+    onUpdateSettings({ matrixSize: { ...matrixSize, rows }, customPatterns: [], winningPatterns: newWinningPatterns });
   };
   const setCols = (delta) => {
     const cols = Math.max(1, Math.min(8, matrixSize.cols + delta));
-    onUpdateSettings({ matrixSize: { ...matrixSize, cols }, customPatterns: [] });
+    const newWinningPatterns = matrixSize.rows !== cols 
+      ? winningPatterns.map(p => p.id === 'diagonal' ? { ...p, enabled: false } : p)
+      : winningPatterns;
+    onUpdateSettings({ matrixSize: { ...matrixSize, cols }, customPatterns: [], winningPatterns: newWinningPatterns });
   };
 
   // --- Preset patterns ---
@@ -193,7 +199,9 @@ const BingoAdvancedSettings = ({ settings, onUpdateSettings }) => {
           <div>
             <p className="text-xs font-bold text-brand-light/60 uppercase tracking-widest mb-3 drop-shadow-sm">Patrones Ganadores</p>
             <div className="flex flex-col gap-2">
-              {winningPatterns.map(p => (
+              {winningPatterns
+                .filter(p => p.id !== 'diagonal' || matrixSize.rows === matrixSize.cols)
+                .map(p => (
                 <label key={p.id} className="flex items-center gap-3 cursor-pointer select-none bg-black/20 p-2 rounded-xl border border-brand-light/5 hover:border-brand-cyan/30 transition-colors">
                   <div className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${p.enabled ? 'bg-brand-cyan border-brand-cyan shadow-neon-cyan' : 'bg-black/50 border-brand-light/20'}`}>
                     {p.enabled && <span className="text-black text-xs font-black">✓</span>}

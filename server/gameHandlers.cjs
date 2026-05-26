@@ -263,7 +263,7 @@ function setupGameHandlers(socket, roomManager) {
     roomManager.emitToRoom(roomId, 'gameDataUpdated', room.gameData);
   });
 
-  socket.on('nextSong', ({ roomId, spotifyId }) => {
+  socket.on('nextSong', ({ roomId, spotifyId, label }) => {
     const room = roomManager.getRoom(roomId);
     if (!room || !room.gameData || room.hostId !== socket.id) return;
 
@@ -274,7 +274,7 @@ function setupGameHandlers(socket, roomManager) {
       // Track songs played for review context
       room.gameData.songsPlayed = [
         ...(room.gameData.songsPlayed || []),
-        { songIndex: room.gameData.currentSongIndex, spotifyId }
+        { songIndex: room.gameData.currentSongIndex, spotifyId, label }
       ];
     }
     roomManager.emitToRoom(roomId, 'gameDataUpdated', room.gameData);
