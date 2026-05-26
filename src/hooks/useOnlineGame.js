@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useSocketConnection } from './game/useSocketConnection';
 import { getCardItemsForGenres, DEFAULT_MATRIX, DEFAULT_PATTERNS } from '../data/constants';
 
@@ -8,6 +8,7 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
   const [lanGames, setLanGames] = useState([]);
   const [roomId, setRoomId] = useState(null);
   const [roomData, setRoomData] = useState(null);
+  const localTransitionTimeRef = useRef(Date.now());
 
   // Derived State
   const isHost = roomData?.hostPlayerId === mySessionId;
@@ -39,7 +40,14 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
       setScreen('online_waiting');
     };
 
-    const handleRoomUpdated = (room) => setRoomData(room);
+    const handleRoomUpdated = (room) => {
+      setRoomData(prev => {
+        if (room.gameData && prev?.gameData?.currentSongIndex !== room.gameData.currentSongIndex) {
+          localTransitionTimeRef.current = Date.now();
+        }
+        return room;
+      });
+    };
 
     const handleGameStarted = (room) => {
       setRoomData(room);
@@ -152,10 +160,10 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
   }, [socket, roomId, mySessionId, setScreen]);
 
   const resetOnlineGame = useCallback(() => {
-    if (socket && roomId) {
+    if (socket && roomId && isHost) {
       socket.emit('resetGame', { roomId });
     }
-  }, [socket, roomId]);
+  }, [socket, roomId, isHost]);
 
   const startOnlineGame = useCallback(() => {
     if (!socket || !isHost || !roomId || !roomData) return;
@@ -170,19 +178,14 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
 
   const markCell = useCallback((row, col) => {
     if (socket && roomId) {
-      socket.emit('markCell', { roomId, row, col });
+      const clientOffset = Date.now() - localTransitionTimeRef.current;
+      socket.emit('markCell', { roomId, row, col, clientOffset });
     }
   }, [socket, roomId]);
 
   const nextSong = useCallback((spotifyId, label) => {
     if (socket && roomId && isHost) {
       socket.emit('nextSong', { roomId, spotifyId: spotifyId || null, label: label || null });
-    }
-  }, [socket, roomId, isHost]);
-
-  const resolveReview = useCallback((accepted) => {
-    if (socket && roomId && isHost) {
-      socket.emit('resolveReview', { roomId, accepted });
     }
   }, [socket, roomId, isHost]);
 
@@ -207,6 +210,5 @@ export const useOnlineGame = (setScreen, mySessionId, localIp, playerName) => {
     startOnlineGame,
     markCell,
     nextSong,
-    resolveReview,
   };
 };

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import BingoCard from '../game/BingoCard';
 import HostDJPanel from '../game/HostDJPanel';
-import BingoReviewScreen from '../game/BingoReviewScreen';
 import SoundEqualizer from '../game/SoundEqualizer';
 import SpotifyAutoPlay from '../game/SpotifyAutoPlay';
 
@@ -13,7 +12,6 @@ const OnlinePlayingScreen = ({
   resetGame,
   markCell,
   nextSong,
-  resolveReview,
 }) => {
   const myPlayer = roomData.players.find(p => p.playerId === playerId) || {};
   const gameData = roomData.gameData || {};
@@ -26,7 +24,6 @@ const OnlinePlayingScreen = ({
 
   const gameStarted = currentSongIndex >= 0;
   const isPlaying = gameState === 'playing' && gameStarted;
-  const isReviewing = gameState === 'reviewing';
   const finished = gameState === 'finished';
 
   // Enter → reset (host only, when finished)
@@ -40,15 +37,6 @@ const OnlinePlayingScreen = ({
 
   return (
     <div className="relative z-10 h-full flex flex-col overflow-hidden">
-
-      {/* Review overlay */}
-      {isReviewing && (
-        <BingoReviewScreen
-          review={gameData.review}
-          isHost={isHost}
-          resolveReview={resolveReview}
-        />
-      )}
 
       {/* ── Top bar ─────────────────────────────────────────────── */}
       <div className="flex items-center px-4 pt-4 pb-2 shrink-0">
@@ -103,7 +91,7 @@ const OnlinePlayingScreen = ({
           <BingoCard
             card={myCard}
             onMarkCell={markCell}
-            disabled={!gameStarted || finished || isReviewing}
+            disabled={!gameStarted || finished}
             winnerName={finished ? gameData.winnerName : null}
             isHost={isHost}
             onReset={resetGame}

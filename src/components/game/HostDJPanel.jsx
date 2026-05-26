@@ -43,13 +43,18 @@ const HostDJPanel = ({ selectedGenres = ['basico'], onNextSong }) => {
         controllerRef.current = EmbedController;
 
         // Auto-advance when a track finishes playing
+        let lastAdvanceTime = 0;
         EmbedController.addListener('playback_update', (e) => {
           if (
             e?.data?.duration > 0 &&
             e?.data?.position >= e?.data?.duration - 1000 &&
             !e?.data?.isPaused
           ) {
-            handleNextRef.current?.();
+            const now = Date.now();
+            if (now - lastAdvanceTime > 2000) {
+              lastAdvanceTime = now;
+              handleNextRef.current?.();
+            }
           }
         });
       });
@@ -156,14 +161,14 @@ const HostDJPanel = ({ selectedGenres = ['basico'], onNextSong }) => {
         </div>
       )}
 
-      {/* Play / Next button */}
-      {!isFinished && (
+      {/* Play button (only shown before starting) */}
+      {!hasStarted && !isFinished && (
         <button
-          id="dj-next-song-btn"
+          id="dj-start-song-btn"
           onClick={handleNext}
           className="w-full py-3 rounded-xl bg-gradient-to-r from-brand-purple to-brand-pink text-white font-black tracking-widest uppercase text-sm hover:opacity-90 active:scale-95 transition-all shadow-neon-pink"
         >
-          {!hasStarted ? '▶ Dale Play' : '⏭ Siguiente Track'}
+          ▶ Dale Play
         </button>
       )}
     </div>
